@@ -22,23 +22,4 @@ public class InputManager : MonoBehaviour
     public KeyCode d = KeyCode.D;
 
     public KeyCode spaceBar = KeyCode.Space;
-
-    public KeyCode Accept { get { return accept; } }
-    public KeyCode Back { get { return back; } }
-
-    public KeyCode LeftClick { get { return leftClick; } }
-    public KeyCode RightClick { get { return rightClick; } }
-    public KeyCode MidClick { get { return midClick; } }
-
-    public KeyCode W { get { return w; } }
-    public KeyCode A { get { return a; } }
-    public KeyCode S { get { return s; } }
-    public KeyCode D { get { return d; } }
-
-    public KeyCode Up { get { return up; } }
-    public KeyCode Down { get { return down; } }
-    public KeyCode Left { get { return left; } }
-    public KeyCode Right { get { return right; } }
-
-    public KeyCode SpaceBar { get { return spaceBar; } }
 }
