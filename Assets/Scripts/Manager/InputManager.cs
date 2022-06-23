@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// You will need it to put in the GameManager
+
 public class InputManager : MonoBehaviour
 {
     public KeyCode accept = KeyCode.Z;
@@ -17,8 +19,8 @@ public class InputManager : MonoBehaviour
     public KeyCode right = KeyCode.RightArrow;
 
     public KeyCode w = KeyCode.W;
-    public KeyCode s = KeyCode.A;
-    public KeyCode a = KeyCode.S;
+    public KeyCode s = KeyCode.S;
+    public KeyCode a = KeyCode.A;
     public KeyCode d = KeyCode.D;
 
     public KeyCode spaceBar = KeyCode.Space;

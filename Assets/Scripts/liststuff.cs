@@ -1,13 +1,13 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WorldManager : MonoBehaviour
+public class liststuff : MonoBehaviour
 {
     public List<string> allMinigames; // populate with the scene's names in inspector
-    List<string> poolMinigames;
+    [ReadOnly, SerializeField] List<string> poolMinigames;
 
     public bool next;
 
