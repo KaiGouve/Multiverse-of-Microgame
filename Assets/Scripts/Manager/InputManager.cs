@@ -17,8 +17,8 @@ public class InputManager : MonoBehaviour
     public KeyCode right = KeyCode.RightArrow;
 
     public KeyCode w = KeyCode.W;
-    public KeyCode s = KeyCode.A;
-    public KeyCode a = KeyCode.S;
+    public KeyCode a = KeyCode.A;
+    public KeyCode s = KeyCode.S;
     public KeyCode d = KeyCode.D;
 
     public KeyCode spaceBar = KeyCode.Space;
