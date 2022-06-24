@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class MouseShake : MonoBehaviour
 {
-    [SerializeField] float lol;
+    float maxGauge = 100;
+    [SerializeField] GaugeBar gaugeBar;
+    [SerializeField] float currentGauge;
+    float gaugeValue;
+
     [SerializeField] float maxTime = 0.1f;
     private float timer = 0;
     [SerializeField] float multiplier = 1;
@@ -33,7 +37,10 @@ public class MouseShake : MonoBehaviour
 
             if (timer > maxTime)
             {
-                lol += mouseCursorSpeed * multiplier;
+                gaugeValue += mouseCursorSpeed * multiplier;
+                currentGauge = Mathf.Clamp(gaugeValue, 0, maxGauge); // to clamp to maxGauge value
+                
+                gaugeBar.UpdateGauge((float)currentGauge / (float)maxGauge);
                 timer = 0;
             }
 
