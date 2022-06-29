@@ -94,8 +94,8 @@ public class Manager : MonoBehaviour
 
 
         // get car num & difference
-        int CarNum = CarNumAtPos(Vector2Int.CeilToInt(startP));
-        Vector2Int[] car = cars[CarNum];
+        int carNum = CarNumAtPos(Vector2Int.CeilToInt(startP));
+        Vector2Int[] car = cars[carNum];
         Vector2Int Diff = endP - startP;
         Diff *= car[0];
         Debug.LogError("DIFF + " + Diff);
@@ -103,11 +103,46 @@ public class Manager : MonoBehaviour
         // get the positions of all the parts of the car
         //Check the positions between here and there for all pieces
 
-        for (int pieceNum = 1; pieceNum<cars[CarNum].Length; pieceNum++)
+        Vector2Int[] tempCar = car;
+        for (int i = 1; i< tempCar.Length; i++)
         {
-            
+            tempCar[i] += Diff;
+        }
+
+        if (EmptyEveryPos(carNum,Diff, car))
+        {
+            for (int i =1;i<car.Length;i++)
+            {
+                positions[tempCar[i].x, tempCar[i].y] = positions[car[i].x, car[i].y];
+
+                positions[car[i].x, car[i].y].transform.position += new Vector3(Diff.x, Diff.y);
+
+                positions[car[i].x, car[i].y] = null;
+
+            }
+
+
+            cars[carNum] = tempCar;
         }
         
+    }
+    bool EmptyEveryPos(int carNum, Vector2Int Diff,Vector2Int[] car)
+    {
+        for (int pieceNum = 1; pieceNum < cars[carNum].Length; pieceNum++)
+        {
+            for (int move = 1; move < Diff.magnitude; move++)
+            {
+                if (checkPos(car[pieceNum]) && CarNumAtPos(car[pieceNum]) != carNum)
+                {
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     bool checkPos(Vector2Int position)
@@ -131,7 +166,7 @@ public class Manager : MonoBehaviour
             List<Vector2Int> carList = new List<Vector2Int>(cars[carnum]);
             carList.RemoveAt(0);
             Debug.Log($" carnum {carnum} length {cars.Length} pos {position}");
-            Debug.LogWarning($"{carList[0]} , {carList[1]} , {carList[2]}");
+            //Debug.LogWarning($"{carList[0]} , {carList[1]} , {carList[2]}");
             if (carList.Contains(position))
             {
                 return carnum;
