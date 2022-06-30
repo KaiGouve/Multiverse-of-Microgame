@@ -33,6 +33,8 @@ public class AvoidObstaclesController : MonoBehaviour
             } 
         }
 
-        player.transform.Translate(Input.GetAxis("Horizontal") * 0.01f, 0, 0);
+        if (falling[spawnAmount - 1].transform.position.y < -10) {
+            // Enter Win State
+        }
     }
 }
