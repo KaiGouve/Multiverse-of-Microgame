@@ -111,6 +111,7 @@ public class Manager : MonoBehaviour
 
         if (EmptyEveryPos(carNum,Diff, car))
         {
+            Debug.LogError("Every pos clear");
             for (int i =1;i<car.Length;i++)
             {
                 positions[tempCar[i].x, tempCar[i].y] = positions[car[i].x, car[i].y];
@@ -134,7 +135,7 @@ public class Manager : MonoBehaviour
             {
                 if (checkPos(car[pieceNum]) && CarNumAtPos(car[pieceNum]) != carNum)
                 {
-
+                    Debug.LogError("clear at ");
                 }
                 else
                 {
