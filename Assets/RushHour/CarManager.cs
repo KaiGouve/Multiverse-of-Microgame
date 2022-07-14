@@ -4,39 +4,63 @@ using UnityEngine;
 
 public class CarManager : MonoBehaviour
 {
-    public Vector2Int direction;
+    [SerializeField] GameObject[] Cars;
 
-    public Vector2Int[] car0 =
+
+    Vector3[] Cars0 = new Vector3[]
     {
-        new Vector2Int(0,0),new Vector2Int(1,0)
+        new Vector3(0.5f,2),new Vector3(-1,1),new Vector3(-2,2),new Vector3(-3,3),new Vector3(-4,4)
     };
-    public Vector2Int[] car1 =
+    Vector3[] Cars1 =
     {
-        new Vector2Int(0,0),new Vector2Int(0,1)
+        new Vector3(),new Vector3(),new Vector3(),new Vector3(),new Vector3()
     };
-    public Vector2Int[] car2 =
+    Vector3[] Cars2 =
     {
-        new Vector2Int(0,0),new Vector2Int(1,0), new Vector2Int(2,0)
+        new Vector3(),new Vector3(),new Vector3(),new Vector3(),new Vector3()
+    };
+    Vector3[] Cars3 =
+    {
+        new Vector3(),new Vector3(),new Vector3(),new Vector3(),new Vector3()
+    };
+    Vector3[] Cars4 =
+    {
+        new Vector3(),new Vector3(),new Vector3(),new Vector3(),new Vector3()
     };
 
-    public Vector2Int[][] carLibrary;
 
-    public Vector2Int[] startPos =
-    {
-        new Vector2Int(0,2),new Vector2Int(3,2), new Vector2Int(1,0)
-    };
+    public Vector3[][] carLibrary = new Vector3[5][];
 
-    Dictionary<Vector2Int, CarScript> Cars = new Dictionary<Vector2Int, CarScript>();
+
 
     void Start()
     {
-        carLibrary[0] = car0;
-        carLibrary[1] = car1;
-        carLibrary[2] = car2;
+        carLibrary[0] = Cars0;
+        carLibrary[1] = Cars1;
+        carLibrary[2] = Cars2;
+        carLibrary[3] = Cars3;
+        carLibrary[4] = Cars4;
+        generateGame(0);
+    }
+    public void generateGame(int ArrNum)
+    {
+        for (int i = 0; i < Cars.Length; i++)
+        {
+            if (carLibrary[ArrNum][i].x >= 0)
+            {
+                Instantiate(Cars[i], FTR(carLibrary[ArrNum][i]), Quaternion.identity);
+            }
+                                                                                                
+        }
+
+    }
+    Vector3 FTR(Vector3 input)
+    {
+        return input - new Vector3(2f,2f,3f);
     }
 
 
-    
+
 
 
 }
