@@ -21,6 +21,7 @@ public class AvoidObstaclesPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Finish") {
+            Debug.Log("You Lose");
             // Enter fail state
         }
     }
