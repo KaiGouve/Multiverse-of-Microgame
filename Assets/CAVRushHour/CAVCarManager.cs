@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarManager : MonoBehaviour
+public class CAVCarManager : MonoBehaviour
 {
     [SerializeField] GameObject[] Cars;
 
 
     Vector3[] Cars0 = new Vector3[]
     {
-        new Vector3(0.5f,2),new Vector3(-1,1),new Vector3(-2,2),new Vector3(-3,3),new Vector3(-4,4)
+        new Vector3(0.5f,2),new Vector3(-1,1),new Vector3(-2,2),new Vector3(3,1.5f),new Vector3(2.5f,0)
     };
     Vector3[] Cars1 =
     {

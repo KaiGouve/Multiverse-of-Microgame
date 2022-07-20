@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ManagerScript : MonoBehaviour
+public class CAVManagerScript : MonoBehaviour
 {
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject flashlight;
@@ -23,7 +23,7 @@ public class ManagerScript : MonoBehaviour
             SpriteSpawners[i].transform.position = new Vector2(Mathf.Clamp(SpriteSpawners[i].transform.position.x, -7.8f, 7.8f), Mathf.Clamp(SpriteSpawners[i].transform.position.y, -3.93f, 3.93f));
             if (j == 0)
             {
-                SpriteSpawners[i].GetComponent<ButtonScript>().real = true;
+                SpriteSpawners[i].GetComponent<CAVButtonScript>().real = true;
             }
         }
         StartCoroutine(startGame());

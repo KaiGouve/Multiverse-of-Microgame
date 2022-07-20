@@ -855,7 +855,7 @@ SpriteRenderer:
   m_Size: {x: 57.6, y: 32.399998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &955181395
@@ -1251,11 +1251,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 401e6baf06950dd42b66d6c54c05569d, type: 3}
   - {fileID: 21300000, guid: 860efcfad09c32348ba7a1c10093e047, type: 3}
   SpriteSpawners:
-  - {fileID: 370179024}
-  - {fileID: 1058836173}
-  - {fileID: 846538037}
-  - {fileID: 918359757}
   - {fileID: 602287409}
+  - {fileID: 918359757}
+  - {fileID: 846538037}
+  - {fileID: 1058836173}
+  - {fileID: 370179024}
 --- !u!1001 &7781649005660134743
 PrefabInstance:
   m_ObjectHideFlags: 0
