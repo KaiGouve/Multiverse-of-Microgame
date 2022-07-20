@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarScript : MonoBehaviour
 {
     [SerializeField] Vector2 Direction;
-    [SerializeField] Vector2 centre;
+    [SerializeField] Vector3 centre;
     [SerializeField] Vector3 diff;
     Vector3 pos;
     private Rigidbody2D rb;
@@ -26,21 +26,30 @@ public class CarScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            diff = Direction*(Diff()-offset);
+            diff = Direction.normalized * (Diff()-offset);
             rb.velocity = diff * Time.deltaTime*1000;
         }
-        if (!Input.GetKey(KeyCode.Mouse0)&& diffToRound(transform.position)<=0.02f)
+        if (!Input.GetKey(KeyCode.Mouse0)&& diffToRound(transform.position)<=0.02f&& rb.velocity.magnitude!=0)
         {
-            rb.velocity = Vector2.zero;
-            transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y),-3);
+            if(diffToRound(transform.position) <= 0.02f)
+            {
+                rb.velocity = Vector2.zero;
+               // transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), -3);
+            }
+            
         }
 
         
     }
     float diffToRound(Vector3 h)
     {
-        Debug.Log(Mathf.Abs((h.x - Mathf.Round(h.x))*Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);
-        Debug.LogError(h.x + h.y);
+        Vector3 unitPos = h
+
+        
+
+
+        Debug.Log(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);
+        Debug.LogError($"{h.x} + {h.y}");
         return Mathf.Abs(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);
         
 
