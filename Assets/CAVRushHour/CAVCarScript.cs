@@ -43,7 +43,7 @@ public class CarScript : MonoBehaviour
     }
     float diffToRound(Vector3 h)
     {
-        Vector3 unitPos = h
+        Vector3 unitPos = h;
 
         
 
