@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.99, y: 0.99}
   m_EdgeRadius: 0
 --- !u!114 &8011373449972993465
 MonoBehaviour:
@@ -126,8 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 2, y: 0}
-  centre: {x: 0.5, y: 0, z: 0}
-  diff: {x: 0, y: 0, z: 0}
 --- !u!50 &1418200210283567983
 Rigidbody2D:
   serializedVersion: 4
@@ -148,4 +146,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6
