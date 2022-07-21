@@ -11,11 +11,13 @@ public class CAVCarScript : MonoBehaviour
     bool thisCar = false;
     Vector2 centre;
     Vector3 diff;
+    Vector3 moved;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         centre = new Vector2(findCentre(Direction.x), findCentre(Direction.y));
+        
     }
 
 
@@ -39,7 +41,10 @@ public class CAVCarScript : MonoBehaviour
     }
 
     private void Update()
-    {/*
+    {
+        moved = transform.position + (Vector3)centre;
+
+        /*
         pos = transform.position + centre;
 
 
@@ -55,7 +60,10 @@ public class CAVCarScript : MonoBehaviour
             }
             
         }*/
-        if( rb.velocity.magnitude!=0 & !thisCar)
+
+        diffToRound();
+
+        if ( rb.velocity.magnitude!=0 & !thisCar)
         {
             checkSnap();
         }
@@ -71,14 +79,8 @@ public class CAVCarScript : MonoBehaviour
 
     void checkSnap()
     {
-
-        Vector3 c = transform.position + (Vector3)centre;
-
-        Debug.LogError(c);
-
-        if (diffToRound(c) <= 0.05)
+        if (diffToRound() <= 0.03)
         {
-            Debug.LogWarning("STOP");
             stopMovement();
         }
 
@@ -88,16 +90,24 @@ public class CAVCarScript : MonoBehaviour
     void stopMovement()
     {
         rb.velocity = Vector3.zero;
-        Vector3 d = transform.position + (Vector3)centre;
-        Vector3 e = new Vector3(Mathf.Round(d.x), Mathf.Round(d.y), d.z);
+        Vector3 e = new Vector3(Mathf.Round(moved.x), Mathf.Round(moved.y), moved.z);
         transform.position = e - (Vector3)centre;
     }
 
-    float diffToRound(Vector3 h)
+    float diffToRound()
     {
+        float g = Mathf.Abs(moved.x - Mathf.Round(moved.x));
+        float h = Mathf.Abs(moved.y - Mathf.Round(moved.y));
+
+        return g+h;
+
+
+/*
+
         Debug.Log(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);
         Debug.LogError($"{h.x} + {h.y}");
-        return Mathf.Abs(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);
+        Debug.LogError(Mathf.Abs(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y));
+        return Mathf.Abs(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);*/
         
 
     }
