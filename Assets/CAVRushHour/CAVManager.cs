@@ -10,7 +10,6 @@ public class CAVManager : MonoBehaviour
     void Start()
     {
         GenerateTiles();
-        GenerateCars();
     }
 
     void GenerateTiles()
@@ -29,8 +28,5 @@ public class CAVManager : MonoBehaviour
         return input-2f;
     }
 
-    void GenerateCars()
-    {
 
-    }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1418200210283567983}
   m_Layer: 0
   m_Name: car 0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 2, y: 0}
+  redCar: 1
 --- !u!50 &1418200210283567983
 Rigidbody2D:
   serializedVersion: 4

@@ -12,6 +12,7 @@ public class CAVCarScript : MonoBehaviour
     Vector2 centre;
     Vector3 diff;
     Vector3 moved;
+    [SerializeField] bool redCar;
 
     private void Start()
     {
@@ -44,24 +45,6 @@ public class CAVCarScript : MonoBehaviour
     {
         moved = transform.position + (Vector3)centre;
 
-        /*
-        pos = transform.position + centre;
-
-
-        *//*
-        if (!Input.GetKey(KeyCode.Mouse0)&& diffToRound(transform.position)<=0.02f&& rb.velocity.magnitude!=0&& thisCar)
-        {
-            if(diffToRound(transform.position) <= 0.02f)
-            {
-                rb.velocity = Vector2.zero;
-                thisCar = false;
-                Debug.LogWarning("dropped piece " + this);
-               // transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), -3);
-            }
-            
-        }*/
-
-        diffToRound();
 
         if ( rb.velocity.magnitude!=0 & !thisCar)
         {
@@ -74,12 +57,11 @@ public class CAVCarScript : MonoBehaviour
             rb.velocity = diff * Time.deltaTime * 1000;
         }
 
-
     }
 
     void checkSnap()
     {
-        if (diffToRound() <= 0.03)
+        if (diffToRound() <= 0.2)
         {
             stopMovement();
         }
@@ -92,6 +74,11 @@ public class CAVCarScript : MonoBehaviour
         rb.velocity = Vector3.zero;
         Vector3 e = new Vector3(Mathf.Round(moved.x), Mathf.Round(moved.y), moved.z);
         transform.position = e - (Vector3)centre;
+
+        if (transform.position.x >= 2.5)
+        {
+            Debug.LogError("WIN");
+        }
     }
 
     float diffToRound()
@@ -100,16 +87,6 @@ public class CAVCarScript : MonoBehaviour
         float h = Mathf.Abs(moved.y - Mathf.Round(moved.y));
 
         return g+h;
-
-
-/*
-
-        Debug.Log(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);
-        Debug.LogError($"{h.x} + {h.y}");
-        Debug.LogError(Mathf.Abs(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y));
-        return Mathf.Abs(Mathf.Abs((h.x - Mathf.Round(h.x)) * Direction.x + (h.y - Mathf.Round(h.y))) * Direction.y);*/
-        
-
     }
     Vector3 Diff()
     {
