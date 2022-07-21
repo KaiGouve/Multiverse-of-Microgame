@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AvoidObstaclesController : MonoBehaviour
+// Check Script Avoid Obstalces Player for more
 {
     public Vector3[] spawners;
     public GameObject obstacle;
