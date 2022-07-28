@@ -11,10 +11,29 @@ public class GameOver : MonoBehaviour
 
     public UnityEvent gameOver;
 
+    World world;
+
+    bool callOnce = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        //Time.timeScale = 1;
+ 
+    }
+
+    void Update()
+    {
+        if (callOnce == true)
+        {
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Debug.Log("GameObject" + name + " loadToScene " + loadToScene);
+                SceneManager.LoadScene(loadToScene);
+                Time.timeScale = 1;
+                callOnce = false;
+            }
+        }
     }
 
     public void GameOverPanel()
@@ -27,18 +46,18 @@ public class GameOver : MonoBehaviour
 
     public void ReturntoScene()
     {
-        if (Input.GetMouseButton(0))
-        {
-            SceneManager.LoadScene(loadToScene);
-        }
+        callOnce = true;
+        //Debug.Log("callOnce " + callOnce);
+    }
 
-        //// Return to Scene
-        //if (loadToScene == null)
-        //{
-        //    if (Input.GetMouseButtonDown(0))
-        //    {
-        //        SceneManager.LoadScene(loadToScene);
-        //    }
-        //}
+    public void NextGame()
+    {
+        world = (World)GameObject.Find("WorldManager").GetComponent(typeof(World));
+
+        if (world != null)
+        {
+            world.NextGame();
+            Time.timeScale = 1;
+        }
     }
 }
