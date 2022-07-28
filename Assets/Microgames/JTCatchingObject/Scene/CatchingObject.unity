@@ -973,7 +973,7 @@ MonoBehaviour:
   - {x: 1, y: 6, z: 0}
   - {x: 0, y: 6, z: 0}
   obstacle: {fileID: 1873674764590427924, guid: a121cf0669a02bc4092ff3abfd77d749, type: 3}
-  speed: 3
+  speed: 0.6
   player: {fileID: 475923184}
   spawnAmount: 20
   counter: 0
@@ -1044,7 +1044,7 @@ MonoBehaviour:
     clampEnable: 0
     minClamp: {x: 0, y: 0, z: 0}
     maxClamp: {x: 0, y: 0, z: 0}
-  velocity: 13
+  velocity: 3
   flipEnable: 0
 --- !u!114 &475923192
 MonoBehaviour:
@@ -1067,6 +1067,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5646760477332238061}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: NextGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2204,4 +2216,16 @@ MonoBehaviour:
   loadToScene: MainScene
   gameOver:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4635148705266481964, guid: 8afe5f537bfd18e439a29c916e3d0e4a, type: 3}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: ReturntoScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

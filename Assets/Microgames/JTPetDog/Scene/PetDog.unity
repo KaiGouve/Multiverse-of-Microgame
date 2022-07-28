@@ -243,8 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gaugeBar: {fileID: 1324361874}
   currentGauge: 0
-  maxTime: 0.1
-  multiplier: 5
+  maxTime: 0.01
+  multiplier: 2
   currentMouse: {x: 0, y: 0}
   nextScene:
     m_PersistentCalls:
@@ -253,6 +253,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3249483393010590483}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: NextGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -274,7 +286,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.002465248, y: -0.1380538}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -285,7 +297,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0640965, y: 1.3648565}
   m_EdgeRadius: 0
 --- !u!212 &46696235
 SpriteRenderer:
@@ -2458,6 +2470,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3249483393010590483}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: ReturntoScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
