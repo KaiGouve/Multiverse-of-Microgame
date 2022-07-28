@@ -673,7 +673,7 @@ MonoBehaviour:
     allMinigames:
     - RushHour
     - PetDog
-    - Survival
+    - DoorCode
     poolMinigames: []
   - worldName: Internet
     allMinigames:

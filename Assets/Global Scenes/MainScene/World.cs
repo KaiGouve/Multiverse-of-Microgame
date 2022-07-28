@@ -39,13 +39,13 @@ public class World : MonoBehaviour
         }
 
         int iWorld = lWorld.Count - 1;
-        int iPool = Random.Range(0, worlds[iWorld].poolMinigames.Count-1);
+        int iPool = Random.Range(0, worlds[iWorld].poolMinigames.Count);
         
         //Cody Debugging
         Debug.Log(worlds[worlds[iWorld].poolMinigames.Count]);
         Debug.LogWarning($" ipool {iPool}. poolminigames.count {worlds[iWorld].poolMinigames.Count} and iworld {iWorld}");
 
-        if ((worlds[iWorld].poolMinigames.Count) > 0)
+        if ((worlds[iWorld].poolMinigames.Count) > 1)
         {
             //load that scene by name
             SceneManager.LoadScene(worlds[iWorld].poolMinigames[iPool]);
