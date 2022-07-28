@@ -671,23 +671,33 @@ MonoBehaviour:
   worlds:
   - worldName: Normal
     allMinigames:
+    - RushHour
+    - PetDog
     - Survival
     poolMinigames: []
   - worldName: Internet
     allMinigames:
-    - CatchingObject
+    - BugSquash
+    - TwitterBird
+    - Pop-Up Ads
     poolMinigames: []
   - worldName: Horror
     allMinigames:
-    - CliffFall
+    - Search
+    - Survival
+    - Monster House
     poolMinigames: []
   - worldName: Sci_Fi
     allMinigames:
-    - TwitterBird
+    - SpaceInvader
+    - CatchingObject
+    - Stealing Object
     poolMinigames: []
   - worldName: Post_Apocalyptic
     allMinigames:
-    - PetDog
+    - Climber
+    - CliffFall
+    - Apocalypse run
     poolMinigames: []
   next: 0
   lWorld: []
