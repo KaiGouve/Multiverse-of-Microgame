@@ -16,6 +16,7 @@ public class CAVCamera : MonoBehaviour
     void Update()
     {
         Vector3 temp = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, Player.position.y+offset, 0.01f),transform.position.z);
+        temp.y = Mathf.Clamp(temp.y, -20, 20);
         transform.position = temp;
     }
 }

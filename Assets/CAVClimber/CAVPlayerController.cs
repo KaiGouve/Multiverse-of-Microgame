@@ -40,6 +40,13 @@ public class CAVPlayerController : MonoBehaviour
 
         rb.velocity = vel;
 
+        if (transform.position.y > 25)
+        {
+            //WIN
+            Debug.Log("WIN");
+        }
+
+
 
     }
 
