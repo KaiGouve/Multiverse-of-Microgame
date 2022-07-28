@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CAVCarManager : MonoBehaviour
 {
     [SerializeField] GameObject[] Cars;
+    public UnityEvent nextScene;
 
 
     Vector3[] Cars0 = new Vector3[]
@@ -42,6 +44,7 @@ public class CAVCarManager : MonoBehaviour
                 if (i == 0)
                 {
                     Physics2D.IgnoreCollision(car.GetComponent<BoxCollider2D>(), GetComponent<PolygonCollider2D>());
+                    car.GetComponent<CAVCarScript>().cM = this;
                 }
             }
                                                                                                 

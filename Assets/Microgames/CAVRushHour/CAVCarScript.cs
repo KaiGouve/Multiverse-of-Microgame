@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CAVCarScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class CAVCarScript : MonoBehaviour
     Vector3 diff;
     Vector3 moved;
     [SerializeField] bool redCar;
+    public CAVCarManager cM;
 
     private void Start()
     {
@@ -77,6 +79,7 @@ public class CAVCarScript : MonoBehaviour
 
         if (transform.position.x >= 2.5)
         {
+            cM.nextScene.Invoke();
             Debug.LogError("WIN");
         }
     }

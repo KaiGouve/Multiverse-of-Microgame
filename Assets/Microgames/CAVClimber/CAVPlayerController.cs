@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CAVPlayerController : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class CAVPlayerController : MonoBehaviour
     Vector2 vel;
     Rigidbody2D rb;
     bool grounded;
-
+    public UnityEvent nextScene;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class CAVPlayerController : MonoBehaviour
         if (transform.position.y > 25)
         {
             //WIN
+            nextScene.Invoke();
             Debug.Log("WIN");
         }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BugManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BugManager : MonoBehaviour
     int bugsFluc;
 
     Vector2 limits = new Vector2(8,4.2f);
+
+    public UnityEvent nextScene;
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class BugManager : MonoBehaviour
         bugsFluc++;
         if (bugsFluc == bugs)
         {
+            nextScene.Invoke();
             Debug.Log("WIN");
         }
     }
