@@ -63,7 +63,7 @@ public class SpotTheDifferenceController : MonoBehaviour
         if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color == getCol) {
             {Debug.Log("You Win!");} // Win State
         } else {
-            {Debug.Log("You Win!");} // Lose State
+            {Debug.Log("You Lose!");} // Lose State
         }
     }
 }
