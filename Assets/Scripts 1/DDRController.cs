@@ -21,6 +21,10 @@ public class DDRController : MonoBehaviour
     float speed;
     int dist = 15;
     Vector3 startPoint;
+    public int successful=0;
+    float antiCheatTimer = 0;
+    float antiCheatCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +34,12 @@ public class DDRController : MonoBehaviour
             beatShape = Random.Range(0, 4);
             startPoint = new Vector3(markers[beatShape].position.x + dist, markers[beatShape].position.y, 0);
             arrowSequence[i] = Instantiate(arrow, startPoint, Quaternion.identity);
+            arrowSequence[i].GetComponent<DDRArrowScript>().DDRC = this;
         }
         speed = dist / (bps * 2);
         StartCoroutine(BeatTimer());
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         for (var i = 0; i < beatLimit; i ++) {
@@ -54,7 +58,43 @@ public class DDRController : MonoBehaviour
         
         // Start On Beat
         // if keepCouint == 1 moveArrow
+
+        if(successful== beatLimit)
+        {
+            //WINSTATE
+            Debug.LogError("WIN");
+            successful++;
+        }
+
+
     }
+
+    private void Update()
+    {
+        //Anticheat
+        antiCheatTimer += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
+        {
+            antiCheatCounter++;
+        }
+        if (antiCheatTimer >= 0.5f)
+        {
+            //check how many inputs
+            if (antiCheatCounter > 4)
+            {
+                //probably cheating idk what to do if they are tho rn.
+                Debug.LogWarning("cheating");
+
+            }
+
+            antiCheatTimer -= 0.5f;
+            antiCheatCounter = 0;
+        }
+
+
+    }
+
 
     IEnumerator BeatTimer() {
         yield return new WaitForSeconds(0.5f);
