@@ -9,6 +9,7 @@ public class MouseHoverScaleUI : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public Vector3 targetResize;
     public float speed;
     Vector3 targetOriginalSize;
+    public float multiplier = 1;
 
     private bool mouse_over = false;
 
@@ -19,14 +20,22 @@ public class MouseHoverScaleUI : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     void Update()
     {
-        if (mouse_over)
+        if (Time.timeScale<1)
         {
-            // Debug.Log("Mouse Over");
-            targetSize.transform.localScale = Vector3.Lerp(targetSize.transform.localScale, targetResize, speed * Time.deltaTime);
+            multiplier = 100000;    
         }
         else
         {
-            targetSize.transform.localScale = Vector3.Lerp(targetSize.transform.localScale, targetOriginalSize, speed * Time.deltaTime);
+            multiplier = 1;
+        }
+        if (mouse_over)
+        {
+            // Debug.Log("Mouse Over");
+            targetSize.transform.localScale = Vector3.Lerp(targetSize.transform.localScale, targetResize, speed * Time.deltaTime * multiplier);
+        }
+        else
+        {
+            targetSize.transform.localScale = Vector3.Lerp(targetSize.transform.localScale, targetOriginalSize, speed * Time.deltaTime * multiplier);
         }
     }
 
