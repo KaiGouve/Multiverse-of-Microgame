@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class World : MonoBehaviour
@@ -9,6 +10,7 @@ public class World : MonoBehaviour
     public List<WorldsCollection> worlds;
     public bool next;
     [SerializeField, ReadOnly] List<string> lWorld;
+
 
     void Start()
     {
@@ -42,8 +44,11 @@ public class World : MonoBehaviour
         int iPool = Random.Range(0, worlds[iWorld].poolMinigames.Count);
         
         //Cody Debugging
-        Debug.Log(worlds[worlds[iWorld].poolMinigames.Count]);
-        Debug.LogWarning($" ipool {iPool}. poolminigames.count {worlds[iWorld].poolMinigames.Count} and iworld {iWorld}");
+        Debug.Log(worlds[worlds[iWorld].poolMinigames.Count-1]);  
+        Debug.LogWarning($" ipool {iPool}. iworld {iWorld} poolminigames.count {worlds[iWorld].poolMinigames.Count} and iworld {iWorld}");
+
+        updateMusic(iWorld, worlds[iWorld].poolMinigames[iPool]);
+
 
         if ((worlds[iWorld].poolMinigames.Count) > 1)
         {
@@ -71,6 +76,11 @@ public class World : MonoBehaviour
             NextGame();
             Time.timeScale = 1;
         }
+    }
+    void updateMusic(int world, string _game )
+    {
+        Debug.Log(4 - world + "WORLD");
+        GetComponent<MusicManager>().ChangeWorldMusic(4 - world,_game);
     }
 }
 
