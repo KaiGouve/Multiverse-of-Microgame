@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DDRController : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class DDRController : MonoBehaviour
     public Transform[] markers;
     public GameObject arrow;
     GameObject[] arrowSequence;
-    int beatLimit = 16;
+    int beatLimit = 17;
     int beatShape;
-    int counter = -1;
+    int counter = -5;
     int bpm = 120;
     int note = 2;
     float bps;
@@ -22,8 +23,12 @@ public class DDRController : MonoBehaviour
     int dist = 15;
     Vector3 startPoint;
     public int successful=0;
-    float antiCheatTimer = 0;
-    float antiCheatCounter;
+
+
+
+    public UnityEvent nextScene;
+    public UnityEvent failed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +40,12 @@ public class DDRController : MonoBehaviour
             startPoint = new Vector3(markers[beatShape].position.x + dist, markers[beatShape].position.y, 0);
             arrowSequence[i] = Instantiate(arrow, startPoint, Quaternion.identity);
             arrowSequence[i].GetComponent<DDRArrowScript>().DDRC = this;
+            arrowSequence[i].GetComponent<DDRArrowScript>().fail = failed;
         }
         speed = dist / (bps * 2);
         StartCoroutine(BeatTimer());
+        
+
     }
 
     void FixedUpdate()
@@ -62,44 +70,27 @@ public class DDRController : MonoBehaviour
         if(successful== beatLimit)
         {
             //WINSTATE
-            Debug.LogError("WIN");
+            StartCoroutine(Win());
             successful++;
         }
 
 
     }
 
-    private void Update()
+    IEnumerator Win()
     {
-        //Anticheat
-        antiCheatTimer += Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
-        {
-            antiCheatCounter++;
-        }
-        if (antiCheatTimer >= 0.5f)
-        {
-            //check how many inputs
-            if (antiCheatCounter > 4)
-            {
-                //probably cheating idk what to do if they are tho rn.
-                Debug.LogWarning("cheating");
-
-            }
-
-            antiCheatTimer -= 0.5f;
-            antiCheatCounter = 0;
-        }
-
-
+        yield return new WaitForSeconds(2.1f);
+        nextScene.Invoke();
     }
-
 
     IEnumerator BeatTimer() {
         yield return new WaitForSeconds(0.5f);
         counter ++;
         StartCoroutine(BeatTimer());
+        if (counter == -4)
+        {
+            GameObject.Find("WorldManager").GetComponent<MusicManager>().DDRStart();
+        }
         
     }
 }

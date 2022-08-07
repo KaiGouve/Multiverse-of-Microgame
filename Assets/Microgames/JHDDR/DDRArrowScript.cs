@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DDRArrowScript : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DDRArrowScript : MonoBehaviour
     float rotY;
     int type;
     bool ready;
+
+    public UnityEvent fail;
 
     KeyCode[] direction =
     {
@@ -60,7 +63,7 @@ public class DDRArrowScript : MonoBehaviour
         if (transform.position.x < -9 && type<4)
         {
             //fail
-            Debug.LogError($"FAILED");
+            fail.Invoke();
             type = 5;
         }
 
