@@ -12,7 +12,7 @@ public class CAVEnemyScript : MonoBehaviour
         if (transform.position.y <= -4.3f)
         {
             //loss
-            Debug.Log("LOST");
+            GameObject.Find("Gun").GetComponent<CAVGunScript>().fail.Invoke();
         }
     }
 }

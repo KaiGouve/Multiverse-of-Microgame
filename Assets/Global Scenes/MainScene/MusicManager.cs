@@ -50,6 +50,7 @@ public class MusicManager : MonoBehaviour
     }
     public void DDRStart()
     {
+        currentWorld = 5;
         Debug.LogError("HEEEEEEEEEEEELP");
         outputs[0].volume = 0;
         outputs[1].volume = 0;
@@ -59,11 +60,16 @@ public class MusicManager : MonoBehaviour
         outputs[5].volume = volume;
         outputs[5].PlayDelayed(0.3f);
     }
+    public void DDRFail()
+    {
+        outputs[5].volume = 0;
+    }
 
 
     public void ChangeVolume(float _volume)
     {
         volume = _volume;
+        ChangeWorldMusic(currentWorld,"A");
     }
 
 

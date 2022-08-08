@@ -5,10 +5,20 @@ using UnityEngine.Events;
 
 public class ActivateEvent : MonoBehaviour
 {
-    [SerializeField] UnityEvent Activate;
+    [Header("You can add delay and a second set of actions here")]
+    [SerializeField] float activationDelay;
+    [SerializeField] UnityEvent Instant;
+    [SerializeField] UnityEvent Delayed;
     void OnEnable()
     {
-        Activate.Invoke();
+        StartCoroutine(delayedInvoke());
+    }
+
+    IEnumerator delayedInvoke()
+    {
+        Instant.Invoke();
+        yield return new WaitForSeconds(activationDelay);
+        Delayed.Invoke();
     }
 
 }

@@ -10,13 +10,11 @@ public class CAVButtonScript : MonoBehaviour
     {
         if (real)
         {
-            //win
-            Debug.Log("won");
+            GameObject.Find("Manager").GetComponent<CAVManagerScript>().nextScene.Invoke();
         }
         else
         {
-            //fail
-            Debug.Log("failed");
+            GameObject.Find("Manager").GetComponent<CAVManagerScript>().fail.Invoke();
         }
     }
 }

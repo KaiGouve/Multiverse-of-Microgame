@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovementWithJump : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerMovementWithJump : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
+    [SerializeField] UnityEvent nextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,10 @@ public class PlayerMovementWithJump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Hambaga");
+        }
+        if (transform.position.x > 70)
+        {
+            nextScene.Invoke();
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class CAVManagerScript : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class CAVManagerScript : MonoBehaviour
     [SerializeField] GameObject flashlight;
     [SerializeField] Sprite[] objectSprites;
     [SerializeField] GameObject[] SpriteSpawners;
+    [SerializeField] public UnityEvent nextScene;
+    [SerializeField] public UnityEvent fail;
+    [SerializeField] GameObject timer;
 
     private void Start()
     {
@@ -34,5 +38,6 @@ public class CAVManagerScript : MonoBehaviour
         yield return new WaitForSeconds(4f);
         canvas.SetActive(false);
         flashlight.SetActive(true);
+        timer.SetActive(true);
     }
 }

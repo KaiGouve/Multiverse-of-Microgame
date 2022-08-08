@@ -65,12 +65,8 @@ public class DDRArrowScript : MonoBehaviour
             //fail
             fail.Invoke();
             type = 5;
+            GameObject.Find("WorldManager").GetComponent<MusicManager>().DDRFail();
         }
-
-
-
-
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

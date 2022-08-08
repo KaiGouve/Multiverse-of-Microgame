@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CAVGunScript : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class CAVGunScript : MonoBehaviour
 
     float cooldownG = 0.3f;
     float timerG = 0;
-    float cooldownS = 1f;
+    float cooldownS = 1.5f;
     float timerS = 0;
     float speed = 0.8f;
 
     int spawnAmount = 30;
     int amountLeft = 30;
+
+    [SerializeField] UnityEvent nextScene;
+    public UnityEvent fail;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +33,7 @@ public class CAVGunScript : MonoBehaviour
 
         if (spawnAmount > 0 && timerS <= 0)
         {
-            Instantiate(enemy, new Vector2(Mathf.Sin(Time.time)*6,6), Quaternion.identity);
+            Instantiate(enemy, new Vector2((int)Random.Range(-6, 6), 6), Quaternion.identity);
             timerS = cooldownS;
             spawnAmount--;
         }
@@ -41,7 +45,7 @@ public class CAVGunScript : MonoBehaviour
         if (amountLeft == 0)
         {
             //win
-            Debug.Log("WON");
+            nextScene.Invoke();
         }
     }
 }

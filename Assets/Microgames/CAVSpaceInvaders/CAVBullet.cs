@@ -26,6 +26,7 @@ public class CAVBullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            GameObject.Find("Gun").GetComponent<CAVGunScript>().dead();
         }
     }
 }
