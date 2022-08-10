@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class MusicManager : MonoBehaviour
 {
     int currentWorld = -1;
-    float volume = 1;
+    float volume = 0.5f;
     [SerializeField] AudioSource[] outputs;
 
     private void Update()
