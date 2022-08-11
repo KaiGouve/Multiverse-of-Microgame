@@ -30,14 +30,8 @@ public class CAVManagerScript : MonoBehaviour
                 SpriteSpawners[i].GetComponent<CAVButtonScript>().real = true;
             }
         }
-        StartCoroutine(startGame());
     }
 
-    IEnumerator startGame()
-    {
-        yield return new WaitForSeconds(4f);
-        canvas.SetActive(false);
-        flashlight.SetActive(true);
-        timer.SetActive(true);
-    }
+
+    
 }

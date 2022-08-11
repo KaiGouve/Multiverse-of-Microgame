@@ -29,7 +29,7 @@ public class CAVPlayerController : MonoBehaviour
         {
             vel.y = 0;
         }
-        if(grounded&& Input.GetKey(KeyCode.Space))
+        if(grounded&& Input.GetKey(KeyCode.Space)|| grounded && Input.GetKey(KeyCode.W))
         {
             vel.y = 6;
         }
@@ -45,7 +45,6 @@ public class CAVPlayerController : MonoBehaviour
         {
             //WIN
             nextScene.Invoke();
-            Debug.Log("WIN");
         }
 
 
@@ -56,7 +55,6 @@ public class CAVPlayerController : MonoBehaviour
     {
         if (other.tag == "Ground"&&!grounded)
         {
-            Debug.Log("grounded");
             grounded = true;
 
         }
@@ -65,7 +63,6 @@ public class CAVPlayerController : MonoBehaviour
     {
         if (other.tag == "Ground"&&grounded)
         {
-            Debug.Log("ungrounded");
             grounded = false;
 
         }
