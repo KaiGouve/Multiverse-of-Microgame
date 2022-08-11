@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4198487098179295555}
   m_Layer: 5
   m_Name: TimerCanvas
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,6 +279,9 @@ MonoBehaviour:
   setTime: 10
   downOrUp: 0
   countText: {fileID: 6798810359370761231}
-  nextScene:
+  startTime:
+    m_PersistentCalls:
+      m_Calls: []
+  endTime:
     m_PersistentCalls:
       m_Calls: []

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class World : MonoBehaviour
 {
+    private List<WorldsCollection> worldsInit;
     public List<WorldsCollection> worlds;
     public bool next;
     [SerializeField, ReadOnly] List<string> lWorld;
@@ -14,6 +15,7 @@ public class World : MonoBehaviour
 
     void Start()
     {
+        worldsInit = worlds;
         DontDestroyOnLoad(gameObject);
 
         List<string> listWorld = new List<string>();
@@ -47,7 +49,7 @@ public class World : MonoBehaviour
         Debug.Log(worlds[worlds[iWorld].poolMinigames.Count-1]);  
         Debug.LogWarning($" ipool {iPool}. iworld {iWorld} poolminigames.count {worlds[iWorld].poolMinigames.Count} and iworld {iWorld}");
 
-        updateMusic(iWorld, worlds[iWorld].poolMinigames[iPool]);
+        updateMusic(iWorld);
 
 
         if ((worlds[iWorld].poolMinigames.Count) > 1)
@@ -77,10 +79,14 @@ public class World : MonoBehaviour
             Time.timeScale = 1;
         }
     }
-    void updateMusic(int world, string _game )
+    void updateMusic(int world)
     {
         Debug.Log(4 - world + "WORLD");
-        GetComponent<MusicManager>().ChangeWorldMusic(4 - world,_game);
+        GetComponent<MusicManager>().ChangeWorldMusic(4 - world);
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
 
@@ -91,3 +97,5 @@ public class WorldsCollection
     public List<string> allMinigames; // populate with the scene's names in inspector
     [SerializeField, ReadOnly] public List<string> poolMinigames;
 }
+
+
