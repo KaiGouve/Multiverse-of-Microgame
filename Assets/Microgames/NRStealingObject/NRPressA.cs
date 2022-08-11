@@ -8,7 +8,7 @@ public class NRPressA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             PressA.Invoke();
         }
