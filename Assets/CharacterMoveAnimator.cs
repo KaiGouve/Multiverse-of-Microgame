@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterMoveAnimator : MonoBehaviour
 {
+    [SerializeField] List<Sprite> idleSprites;
     [SerializeField] List<Sprite> walkLeftSprites;
     [SerializeField] List<Sprite> walkRightSprites;
 
@@ -12,6 +13,7 @@ public class CharacterMoveAnimator : MonoBehaviour
     public bool IsMoving { get; set; }
 
     // States
+    SpriteAnimator idleAnim;
     SpriteAnimator walkLeftAnim;
     SpriteAnimator walkRightAnim;
 
@@ -23,10 +25,12 @@ public class CharacterMoveAnimator : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        idleAnim = new SpriteAnimator(idleSprites, spriteRenderer);
         walkLeftAnim = new SpriteAnimator(walkLeftSprites, spriteRenderer);
         walkRightAnim = new SpriteAnimator(walkRightSprites, spriteRenderer);
 
-        currentAnim = walkRightAnim;
+        currentAnim = idleAnim;
+        //currentAnim = walkRightAnim;
     }
 
     private void Update()
@@ -35,7 +39,9 @@ public class CharacterMoveAnimator : MonoBehaviour
 
         InputMove();
 
-        if (MoveX == 1)
+        if (MoveX == 0)
+        { currentAnim = idleAnim; }
+        else if (MoveX == 1)
         { currentAnim = walkRightAnim; }
         else if (MoveX == -1)
         { currentAnim = walkLeftAnim; }
@@ -63,7 +69,7 @@ public class CharacterMoveAnimator : MonoBehaviour
         }
         else
         {
-            IsMoving = false;
+            IsMoving = true;
             MoveX = 0;
         }
     }
