@@ -31,6 +31,8 @@ public class SurvivalPlayer : MonoBehaviour
     public float groundLength = 0.6f;
     public Vector3 colliderOffset;
 
+    [SerializeField] bool flip = true;
+
     // Update is called once per frame
     void Update()
     {
@@ -65,7 +67,8 @@ public class SurvivalPlayer : MonoBehaviour
 
         if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight))
         {
-            Flip();
+            if (flip == true)
+                Flip();
         }
         if (Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
