@@ -32,7 +32,6 @@ public class BugManager : MonoBehaviour
         if (bugsFluc == bugs)
         {
             nextScene.Invoke();
-            Debug.Log("WIN");
         }
     }
 
