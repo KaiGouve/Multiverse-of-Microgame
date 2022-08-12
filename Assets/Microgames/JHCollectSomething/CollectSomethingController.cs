@@ -12,7 +12,7 @@ public class CollectSomethingController : MonoBehaviour
     void Start()
     {
         //Set Level Layout
-        layout[Random.Range(1, 1)].SetActive(true);
+        layout[Random.Range(0, 2)].SetActive(true);
 ;
     }
 
