@@ -213,6 +213,12 @@ MonoBehaviour:
   targetResize: {x: 1.1, y: 1.1, z: 1.1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 151170515}
 --- !u!114 &33104215
 MonoBehaviour:
@@ -269,18 +275,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 297713044}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2068299426}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -416,7 +410,7 @@ RectTransform:
   - {fileID: 712607373}
   - {fileID: 1752617514}
   m_Father: {fileID: 1442957023}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -585,6 +579,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &111247113
 MonoBehaviour:
@@ -678,6 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 151170514}
   - component: {fileID: 151170515}
+  - component: {fileID: 151170516}
   m_Layer: 0
   m_Name: HoverSound
   m_TagString: SFX
@@ -697,8 +698,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 297713045}
-  m_RootOrder: 7
+  m_Father: {fileID: 1442957023}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &151170515
 AudioSource:
@@ -710,7 +711,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2ca88e5af6551744dab94cf9c344f350, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ebbafd15453de0c4f9080f2a53fa2574, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -796,6 +797,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &151170516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151170513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e317d299ea1515418f0b8b056949a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &157763465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238119038}
+  - component: {fileID: 238119039}
   m_Layer: 5
   m_Name: Pause Menu Backgrounds
   m_TagString: Untagged
@@ -1165,13 +1179,25 @@ RectTransform:
   - {fileID: 1299075574}
   - {fileID: 691868137}
   m_Father: {fileID: 1442957023}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -51, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &238119039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238119037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9826850835a4c4ba22ba21a5facc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &242004192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,9 +1538,8 @@ RectTransform:
   - {fileID: 1649043252}
   - {fileID: 1135933993}
   - {fileID: 2093332379}
-  - {fileID: 151170514}
   m_Father: {fileID: 1442957023}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1658,6 +1683,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &319035943
 MonoBehaviour:
@@ -2160,9 +2191,10 @@ GameObject:
   m_Component:
   - component: {fileID: 372917652}
   - component: {fileID: 372917653}
+  - component: {fileID: 372917654}
   m_Layer: 5
   m_Name: SFX Slider
-  m_TagString: Untagged
+  m_TagString: SFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2240,7 +2272,127 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 151170515}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!82 &372917654
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372917651}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &384431839
 GameObject:
   m_ObjectHideFlags: 0
@@ -2373,6 +2525,36 @@ MonoBehaviour:
   targetResize: {x: 4.1, y: 4.1, z: 4.1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hoverSound: {fileID: 0}
 --- !u!114 &393653189
 MonoBehaviour:
@@ -2417,7 +2599,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 393653190}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: StartFromWorld
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1161526723}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &393653190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,6 +3038,7 @@ GameObject:
   - component: {fileID: 445453368}
   - component: {fileID: 445453367}
   - component: {fileID: 445453366}
+  - component: {fileID: 445453369}
   m_Layer: 5
   m_Name: Return To Menu
   m_TagString: Untagged
@@ -2966,6 +3173,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445453364}
   m_CullTransparentMesh: 1
+--- !u!114 &445453369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445453364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86cd9c135628854ab2f6bc6ea22b2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSize: {fileID: 445453364}
+  targetResize: {x: 1.1, y: 1.1, z: 1.1}
+  speed: 10
+  multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverSound: {fileID: 151170515}
 --- !u!1 &464206047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3362,6 +3592,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &488900082
 MonoBehaviour:
@@ -5181,6 +5417,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &674714024
 MonoBehaviour:
@@ -6178,6 +6420,12 @@ MonoBehaviour:
   targetResize: {x: 4.1, y: 4.1, z: 4.1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &771628563
 MonoBehaviour:
@@ -6222,7 +6470,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 771628564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: StartFromWorld
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1161526723}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &771628564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6453,6 +6737,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &799906615
 MonoBehaviour:
@@ -6514,6 +6804,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: ReturnToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6851,6 +7153,12 @@ MonoBehaviour:
   targetResize: {x: 1.1, y: 1.1, z: 1.1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 151170515}
 --- !u!114 &863562630
 MonoBehaviour:
@@ -7410,7 +7718,7 @@ RectTransform:
   - {fileID: 28300233}
   - {fileID: 602282640}
   m_Father: {fileID: 1442957023}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7520,7 +7828,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2bcb6d1fa74ebc5409189ec5ccf9ffd1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9d8e72f7526ea0545a926ad726050900, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7715,7 +8023,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2026942435}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8567,6 +8875,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1072335963
 MonoBehaviour:
@@ -9146,6 +9460,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1131999237
 MonoBehaviour:
@@ -9191,13 +9511,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9375,6 +9695,12 @@ MonoBehaviour:
   targetResize: {x: 2, y: 2, z: 2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 151170515}
 --- !u!114 &1135933995
 MonoBehaviour:
@@ -9617,6 +9943,36 @@ MonoBehaviour:
   targetResize: {x: 4, y: 4, z: 4}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hoverSound: {fileID: 0}
 --- !u!114 &1158465654
 MonoBehaviour:
@@ -9661,7 +10017,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1158465655}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: StartFromWorld
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1161526723}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1158465655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9737,7 +10117,7 @@ RectTransform:
   - {fileID: 1873653041}
   - {fileID: 445453365}
   m_Father: {fileID: 1442957023}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10147,6 +10527,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1271535948
 MonoBehaviour:
@@ -10410,6 +10796,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1298406578
 MonoBehaviour:
@@ -10471,6 +10863,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: ReturnToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10575,6 +10979,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1299075576
 MonoBehaviour:
@@ -11025,6 +11435,36 @@ MonoBehaviour:
   targetResize: {x: 4.1, y: 4.1, z: 4.1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hoverSound: {fileID: 0}
 --- !u!114 &1358188590
 MonoBehaviour:
@@ -11069,7 +11509,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1358188591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: StartFromWorld
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1161526723}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1358188591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11201,6 +11665,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!1 &1371333119
 GameObject:
@@ -11336,6 +11806,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1375211280
 MonoBehaviour:
@@ -11476,6 +11952,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1377489229
 MonoBehaviour:
@@ -12044,6 +12526,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 151170514}
   - {fileID: 297713045}
   - {fileID: 1699560601}
   - {fileID: 238119038}
@@ -12536,6 +13019,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1551692551
 MonoBehaviour:
@@ -13262,6 +13751,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!1 &1619044241
 GameObject:
@@ -13336,6 +13831,12 @@ MonoBehaviour:
   targetResize: {x: 1, y: 1, z: 1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1619044245
 MonoBehaviour:
@@ -13712,6 +14213,12 @@ MonoBehaviour:
   targetResize: {x: 1.1, y: 1.1, z: 1.1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 151170515}
 --- !u!114 &1649043254
 MonoBehaviour:
@@ -13952,6 +14459,12 @@ MonoBehaviour:
   targetResize: {x: 1.2, y: 1.2, z: 1.2}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 0}
 --- !u!114 &1685809586
 MonoBehaviour:
@@ -14354,7 +14867,7 @@ RectTransform:
   - {fileID: 180176685}
   - {fileID: 853622036}
   m_Father: {fileID: 1442957023}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14647,7 +15160,13 @@ MonoBehaviour:
   targetResize: {x: 1.1, y: 1.1, z: 1.1}
   speed: 10
   multiplier: 1
-  hoverSound: {fileID: 0}
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverSound: {fileID: 151170515}
 --- !u!114 &1752617516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14692,18 +15211,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 297713044}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 69301853}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -15079,6 +15586,60 @@ MonoBehaviour:
   targetResize: {x: 4, y: 4, z: 4}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2026942431}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026942435}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ChangeWorldMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2026942431}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hoverSound: {fileID: 0}
 --- !u!114 &1790753181
 MonoBehaviour:
@@ -15123,7 +15684,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1790753182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2026942434}
+        m_TargetAssemblyTypeName: World, Assembly-CSharp
+        m_MethodName: StartFromWorld
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1161526723}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1790753182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17431,7 +18016,7 @@ GameObject:
   - component: {fileID: 2026942435}
   m_Layer: 0
   m_Name: WorldManager
-  m_TagString: Untagged
+  m_TagString: WorldManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17774,6 +18359,7 @@ GameObject:
   - component: {fileID: 2068299424}
   - component: {fileID: 2068299425}
   - component: {fileID: 2068299426}
+  - component: {fileID: 2068299427}
   m_Layer: 5
   m_Name: Pause Object
   m_TagString: SFX
@@ -17794,7 +18380,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1442957023}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17838,7 +18424,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1262f394ae751294fae11a730a59cba4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98c3a25d91fb11a49b97e65b879930c6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -17924,6 +18510,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2068299427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068299423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e317d299ea1515418f0b8b056949a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2080102954
 GameObject:
   m_ObjectHideFlags: 0
@@ -18193,6 +18791,12 @@ MonoBehaviour:
   targetResize: {x: 1.1, y: 1.1, z: 1.1}
   speed: 10
   multiplier: 1
+  hoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
   hoverSound: {fileID: 151170515}
 --- !u!114 &2093332381
 MonoBehaviour:

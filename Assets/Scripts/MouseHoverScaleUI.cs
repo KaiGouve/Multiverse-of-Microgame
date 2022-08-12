@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class MouseHoverScaleUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,6 +11,9 @@ public class MouseHoverScaleUI : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public float speed;
     Vector3 targetOriginalSize;
     public float multiplier = 1;
+
+    [SerializeField] UnityEvent hoverEvent;
+    [SerializeField] UnityEvent unHoverEvent;
 
     public AudioSource hoverSound;
 
@@ -47,6 +51,8 @@ public class MouseHoverScaleUI : MonoBehaviour, IPointerEnterHandler, IPointerEx
         // Debug.Log("Mouse enter");
         if(hoverSound != null)
             hoverSound.Play();
+        hoverEvent.Invoke();
+
         
     }
 
@@ -56,5 +62,10 @@ public class MouseHoverScaleUI : MonoBehaviour, IPointerEnterHandler, IPointerEx
         // Debug.Log("Mouse exit");
         if (hoverSound != null)
             hoverSound.Stop();
+        unHoverEvent.Invoke();
+    }
+    private void OnDisable()
+    {
+        targetSize.transform.localScale = targetOriginalSize;
     }
 }

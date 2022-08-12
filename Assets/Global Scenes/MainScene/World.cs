@@ -88,6 +88,22 @@ public class World : MonoBehaviour
     {
         Application.Quit();
     }
+    public void StartFromWorld(int n)
+    {
+        
+        int iWorld = lWorld.Count - n;
+        for (int i = 0; i < n; i++)
+        {
+            lWorld.RemoveAt(iWorld);
+        }
+        
+    }
+    public void ReturnToMenu()
+    {
+        worlds = worldsInit;
+        SceneManager.LoadScene("EmptyScene");
+        Time.timeScale = 1;
+    }
 }
 
 [System.Serializable]

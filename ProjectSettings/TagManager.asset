@@ -8,6 +8,7 @@ TagManager:
   - HideOnPause
   - Ground
   - SFX
+  - WorldManager
   layers:
   - Default
   - TransparentFX

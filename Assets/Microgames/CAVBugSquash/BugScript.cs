@@ -12,7 +12,12 @@ public class BugScript : MonoBehaviour
     Vector3 old;
     public BugManager bM;
 
+    [SerializeField] Sprite[] bugs;
 
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = bugs[Random.Range(0, bugs.Length)];
+    }
     public void NewGoal(float a)
     {
         old = transform.position;
@@ -49,6 +54,7 @@ public class BugScript : MonoBehaviour
     private void OnMouseDown()
     {
         bM.clicked();
+        GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
 }

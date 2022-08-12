@@ -34,22 +34,25 @@ public class MusicManager : MonoBehaviour
     }
     private void Start()
     {
+        currentWorld = -1;
         s_vSFX.value = f_sfxVolume;
         s_vSFX.SetValueWithoutNotify(f_sfxVolume);
         s_vMusic.SetValueWithoutNotify(f_mVolume);
 
-        ChangeWorldMusic(0);
+//        ChangeWorldMusic(0);
         ChangeSFXVolume();
         ChangeMusicVolume();
+
+        ChangeWorldMusic(0);
+
     }
     public void ChangeWorldMusic(int newWorld)
     {
-        if (newWorld != currentWorld)
-        {
             for (int i = 0; i < outputs.Length; i++)
             {
                 if (i == newWorld)
                 {
+                    Debug.LogError($"Changing to {outputs[i].gameObject}");
                     outputs[i].volume = f_mVolume;
                 }
                 else
@@ -58,7 +61,6 @@ public class MusicManager : MonoBehaviour
                 }
             }
             currentWorld = newWorld;
-        }
     }
     public void DDRStart()
     {
@@ -81,16 +83,22 @@ public class MusicManager : MonoBehaviour
     {
         f_mVolume = s_vMusic.value;
         ChangeWorldMusic(currentWorld);
+        Debug.Log(f_mVolume);
+        Debug.LogWarning(currentWorld);
     }
     public void ChangeSFXVolume()
     {
-        f_mVolume = s_vMusic.value;
+        f_sfxVolume = s_vSFX.value;
         GameObject[] SFX = GameObject.FindGameObjectsWithTag("SFX");
-        foreach(GameObject _SFX in SFX)
+        Debug.Log($"{f_sfxVolume} volume for {SFX.Length} objects");
+        foreach (GameObject _SFX in SFX)
         {
             _SFX.GetComponent<AudioSource>().volume = f_sfxVolume;
         }
     }
 
-
+    public float currentSFXVolume()
+    {
+        return f_sfxVolume;
+    }
 }

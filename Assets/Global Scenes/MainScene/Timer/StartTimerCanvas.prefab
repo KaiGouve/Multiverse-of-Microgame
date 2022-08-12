@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7314823718611204714}
   m_Layer: 5
   m_Name: Text READY
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 3006081402815710991}
   m_Layer: 5
   m_Name: Text GO
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 3006081402852210096}
   m_Layer: 5
   m_Name: Text SET
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 8801146465233943524}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 1244593042103078481}
   m_Layer: 5
   m_Name: InstructionText
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
