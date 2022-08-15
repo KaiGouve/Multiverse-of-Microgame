@@ -367,6 +367,7 @@ MonoBehaviour:
   - {fileID: 7517954827973978524, guid: 7ffb150a49bc4904691fcce01967891b, type: 3}
   - {fileID: 7517954827973978524, guid: aa7994e7e168bf249aa9ee67f3ba619a, type: 3}
   - {fileID: 7517954827973978524, guid: 301789e0f79f73740bd66883c3594e4f, type: 3}
+  - {fileID: 3165297886844585523, guid: 6b6c8f4dc347f194092a00c17e07703d, type: 3}
   nextScene:
     m_PersistentCalls:
       m_Calls:

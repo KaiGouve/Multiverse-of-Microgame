@@ -50,6 +50,7 @@ public class World : MonoBehaviour
         Debug.LogWarning($" ipool {iPool}. iworld {iWorld} poolminigames.count {worlds[iWorld].poolMinigames.Count} and iworld {iWorld}");
 
         updateMusic(iWorld);
+        
 
 
         if ((worlds[iWorld].poolMinigames.Count) > 1)
@@ -83,6 +84,7 @@ public class World : MonoBehaviour
     {
         Debug.Log(4 - world + "WORLD");
         GetComponent<MusicManager>().ChangeWorldMusic(4 - world);
+        GetComponent<MouseScript>().changeCursor(4 - world);
     }
     public void ExitGame()
     {

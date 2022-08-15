@@ -11,15 +11,15 @@ public class CAVCarManager : MonoBehaviour
 
     Vector3[] Cars0 = new Vector3[]
     {
-        new Vector3(0.5f,1),new Vector3(3,2),new Vector3(3,4),new Vector3(0,3.5f),new Vector3(3.5f,0)
+        new Vector3(1.5f,1),new Vector3(3,2),new Vector3(3,4),new Vector3(0,3.5f),new Vector3(3.5f,0),new Vector3(5f,1)
     };
     Vector3[] Cars1 =
     {
-        new Vector3(2.5f,4),new Vector3(4,3),new Vector3(3,1),new Vector3(1,0.5f),new Vector3(0.5f,3)
+        new Vector3(2.5f,4),new Vector3(4,3),new Vector3(3,1),new Vector3(1,0.5f),new Vector3(1.5f,3),new Vector3(5f,4)
     };
     Vector3[] Cars2 =
     {
-        new Vector3(1.5f,3),new Vector3(0,2),new Vector3(2,1),new Vector3(3,3.5f),new Vector3(2.5f,0)
+        new Vector3(2.5f,3),new Vector3(0,2),new Vector3(2,1),new Vector3(3,3.5f),new Vector3(2.5f,0), new Vector3(5f,3)
     };
 
 

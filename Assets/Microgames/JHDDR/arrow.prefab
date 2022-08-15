@@ -98,6 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc679a5579bf1ea45956040c33cda4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fail:
+    m_PersistentCalls:
+      m_Calls: []
+  s:
+  - {fileID: -279122215, guid: 5d47fe2e03eff0e4dabf41ab74b325f0, type: 3}
+  - {fileID: -1224837118, guid: 5d47fe2e03eff0e4dabf41ab74b325f0, type: 3}
+  - {fileID: 801545795, guid: 5d47fe2e03eff0e4dabf41ab74b325f0, type: 3}
+  - {fileID: -1775075640, guid: 5d47fe2e03eff0e4dabf41ab74b325f0, type: 3}
+  DDRC: {fileID: 0}
 --- !u!61 &3115268158930430703
 BoxCollider2D:
   m_ObjectHideFlags: 0

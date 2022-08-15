@@ -14,7 +14,7 @@ public class NRCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.active){
+        if(player.activeSelf){
             transform.position = new Vector3(Mathf.Lerp(transform.position.x,player.transform.position.x,0.1f),transform.position.y,transform.position.z);
         }
         

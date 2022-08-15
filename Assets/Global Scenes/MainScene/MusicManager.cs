@@ -15,23 +15,6 @@ public class MusicManager : MonoBehaviour
     [SerializeField] Slider s_vMusic;
 
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-            ChangeWorldMusic(0);
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-            ChangeWorldMusic(1);
-        if(Input.GetKeyDown(KeyCode.Alpha3))
-            ChangeWorldMusic(2);
-        if(Input.GetKeyDown(KeyCode.Alpha4))
-            ChangeWorldMusic(3);
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-            ChangeWorldMusic(4);
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-            DDRStart();
-
-
-    }
     private void Start()
     {
         currentWorld = -1;
@@ -39,7 +22,6 @@ public class MusicManager : MonoBehaviour
         s_vSFX.SetValueWithoutNotify(f_sfxVolume);
         s_vMusic.SetValueWithoutNotify(f_mVolume);
 
-//        ChangeWorldMusic(0);
         ChangeSFXVolume();
         ChangeMusicVolume();
 
@@ -83,14 +65,11 @@ public class MusicManager : MonoBehaviour
     {
         f_mVolume = s_vMusic.value;
         ChangeWorldMusic(currentWorld);
-        Debug.Log(f_mVolume);
-        Debug.LogWarning(currentWorld);
     }
     public void ChangeSFXVolume()
     {
         f_sfxVolume = s_vSFX.value;
         GameObject[] SFX = GameObject.FindGameObjectsWithTag("SFX");
-        Debug.Log($"{f_sfxVolume} volume for {SFX.Length} objects");
         foreach (GameObject _SFX in SFX)
         {
             _SFX.GetComponent<AudioSource>().volume = f_sfxVolume;

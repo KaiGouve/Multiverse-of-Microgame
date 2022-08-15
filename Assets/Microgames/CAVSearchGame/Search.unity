@@ -704,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: -106932625, guid: 25dc85b7a0001fe40b88266d7a1089d4, type: 3}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -740,7 +740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[9].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -774,6 +774,10 @@ PrefabInstance:
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[8].m_Target
       value: 
       objectReference: {fileID: 779772748}
+    - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
+      propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[9].m_Target
+      value: 
+      objectReference: {fileID: 1615383362}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -840,6 +844,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[8].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
+      propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
@@ -948,6 +956,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[8].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378678970775136790, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
+      propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[9].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8801146465233943524, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
@@ -1508,7 +1520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1615383363
 Transform:
   m_ObjectHideFlags: 0

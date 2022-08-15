@@ -11,6 +11,7 @@ public class DDRArrowScript : MonoBehaviour
     bool ready;
 
     public UnityEvent fail;
+    [SerializeField] Sprite[] s;
 
     KeyCode[] direction =
     {
@@ -43,6 +44,7 @@ public class DDRArrowScript : MonoBehaviour
                 type = 3;
                 break;
         }
+        GetComponent<SpriteRenderer>().sprite = s[type];
     }
 
     // Update is called once per frame

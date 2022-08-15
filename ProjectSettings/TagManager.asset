@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - SFX
   - WorldManager
+  - Mouse
   layers:
   - Default
   - TransparentFX
