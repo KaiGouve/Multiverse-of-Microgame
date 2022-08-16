@@ -45,9 +45,7 @@ public class World : MonoBehaviour
         int iWorld = lWorld.Count - 1;
         int iPool = Random.Range(0, worlds[iWorld].poolMinigames.Count);
         
-        //Cody Debugging
-        Debug.Log(worlds[worlds[iWorld].poolMinigames.Count-1]);  
-        Debug.LogWarning($" ipool {iPool}. iworld {iWorld} poolminigames.count {worlds[iWorld].poolMinigames.Count} and iworld {iWorld}");
+        
 
         updateMusic(iWorld);
         
