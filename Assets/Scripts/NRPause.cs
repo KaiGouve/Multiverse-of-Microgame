@@ -17,7 +17,7 @@ public class NRPause : MonoBehaviour
             Time.timeScale = 0.00001f;
             ChangeVisibility(false);
         }
-        else if (Time.timeScale > 1)
+        else if (Time.timeScale > 0.1)
         {
             ChangeVisibility(true);
         }
