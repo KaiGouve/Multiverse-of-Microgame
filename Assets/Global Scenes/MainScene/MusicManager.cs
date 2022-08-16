@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class MusicManager : MonoBehaviour
 {
     int currentWorld = -1;
-    float f_mVolume = 0.33f;
-    float f_sfxVolume = 0.66f;
+    float f_mVolume = 0.15f;
+    float f_sfxVolume = 0.3f;
     [SerializeField] AudioSource[] outputs;
 
     [SerializeField] Slider s_vSFX;

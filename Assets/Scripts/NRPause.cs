@@ -7,18 +7,23 @@ public class NRPause : MonoBehaviour
 {
     public UnityEvent Pause;
     GameObject[] HideOnPauseObjects;
+    bool currentlyPaused = false;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0.1)
         {
+
+            // Pause the game
             Pause.Invoke();
             Time.timeScale = 0.00001f;
             ChangeVisibility(false);
+            
         }
-        else if (Time.timeScale > 0.1)
+        else if (Time.timeScale < 0.1 && !currentlyPaused)
         {
+            // Somehow broken fix
             ChangeVisibility(true);
         }
     }
@@ -33,6 +38,7 @@ public class NRPause : MonoBehaviour
         {
             HideOnPauseObjects[i].SetActive(activity);
         }
+        currentlyPaused = !activity;
     }
 
 
