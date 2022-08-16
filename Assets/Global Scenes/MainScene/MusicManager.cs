@@ -72,7 +72,7 @@ public class MusicManager : MonoBehaviour
         GameObject[] SFX = GameObject.FindGameObjectsWithTag("SFX");
         foreach (GameObject _SFX in SFX)
         {
-            _SFX.GetComponent<AudioSource>().volume = f_sfxVolume;
+            _SFX.GetComponent<AudioSource>().volume = f_sfxVolume* _SFX.GetComponent<SFXVolume>().multiplier;
         }
     }
 

@@ -19,6 +19,7 @@ public class MouseShake : MonoBehaviour
     [SerializeField] Vector2 currentMouse;
 
     public UnityEvent nextScene;
+    public UnityEvent win;
 
     void Update()
     {
@@ -43,8 +44,16 @@ public class MouseShake : MonoBehaviour
 
         if (currentGauge == maxGauge)
         {
-            nextScene.Invoke();
-            Debug.Log("NextScene");
+            GetComponent<AudioSource>().Play();
+            maxGauge = Mathf.Infinity;
+            win.Invoke();
+            StartCoroutine(delayedWin());
+            
         }
+    }
+    IEnumerator delayedWin()
+    {
+        yield return new WaitForSeconds(1);
+        nextScene.Invoke();
     }
 }
