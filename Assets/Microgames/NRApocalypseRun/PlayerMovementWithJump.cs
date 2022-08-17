@@ -20,9 +20,12 @@ public class PlayerMovementWithJump : MonoBehaviour
     public LayerMask groundLayer;
     private bool isTouchingGround;
     [SerializeField] UnityEvent nextScene;
+    [SerializeField] Animator anim;
+    SpriteRenderer sR;
     // Start is called before the first frame update
     void Start()
     {
+        sR = GetComponent<SpriteRenderer>();
         player = GetComponent<Rigidbody2D>();
     }
 
@@ -57,5 +60,39 @@ public class PlayerMovementWithJump : MonoBehaviour
         {
             nextScene.Invoke();
         }
+
+        //Animation
+
+        if(player.velocity.x != 0) { sR.flipX = player.velocity.x > 0 ? false : true; }
+
+        if (isTouchingGround && Mathf.Abs(player.velocity.x) < 0.01)
+        {
+            anim.SetInteger("State", 0);
+        }
+        else if (isTouchingGround && Mathf.Abs(player.velocity.x) > 0.01)
+        {
+            anim.SetInteger("State", 1);
+        }
+        else if (player.velocity.y > 0)
+        {
+            {
+                anim.SetInteger("State", 2);
+            }
+        }
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
 }

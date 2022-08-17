@@ -23,6 +23,8 @@ public class CAVGunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.localScale = new Vector3(1.5f- (Mathf.Abs(Input.GetAxis("Horizontal"))*0.5f), 1.5f,1);
+
         transform.position = new Vector2(Mathf.Clamp(Mathf.Lerp(transform.position.x, transform.position.x + Input.GetAxisRaw("Horizontal") * speed, 0.05f), -8.15f, 8.15f), -4.3f) ;
         if(Input.GetKey(KeyCode.Space)&& timerG <= 0)
         {

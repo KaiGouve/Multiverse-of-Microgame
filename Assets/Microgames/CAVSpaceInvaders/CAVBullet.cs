@@ -13,7 +13,7 @@ public class CAVBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.up * 0.02f;
+        transform.position += Vector3.up * 10f*Time.deltaTime;
         if (transform.position.y >= 5.3)
         {
             Destroy(gameObject);
@@ -25,8 +25,16 @@ public class CAVBullet : MonoBehaviour
         if(collision.tag == "Finish")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
-            GameObject.Find("Gun").GetComponent<CAVGunScript>().dead();
+            GetComponent<AudioSource>().Play();
+            transform.position = new Vector3(-20,-20,0);
+            StartCoroutine(delayed());
+            
         }
+    }
+    IEnumerator delayed()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        GameObject.Find("Gun").GetComponent<CAVGunScript>().dead();
     }
 }

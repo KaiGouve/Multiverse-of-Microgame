@@ -10,10 +10,14 @@ public class CAVPlayerController : MonoBehaviour
     Rigidbody2D rb;
     bool grounded;
     public UnityEvent nextScene;
+    [SerializeField] Animator anim;
+    bool ladder=false;
+    SpriteRenderer sR;
 
     // Start is called before the first frame update
     void Start()
     {
+        sR = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -21,9 +25,6 @@ public class CAVPlayerController : MonoBehaviour
     void Update()
     {
         Horiz = Mathf.Lerp(Horiz, Input.GetAxis("Horizontal"),Time.deltaTime*10);
-
-        
-
         vel = rb.velocity;
         if (vel.y < 0 && grounded)
         {
@@ -47,7 +48,26 @@ public class CAVPlayerController : MonoBehaviour
             nextScene.Invoke();
         }
 
+        if (vel.x != 0){sR.flipX = vel.x > 0 ? false : true;}
 
+        if( grounded && Mathf.Abs(vel.x) < 0.01 &&!ladder)
+        {
+            anim.SetInteger("State", 0);
+        }else if (grounded && Mathf.Abs(vel.x)>0.01&&!ladder)
+        {
+            anim.SetInteger("State", 1);
+        }
+        else if (vel.y > 0)
+        {
+            if (grounded && ladder)
+            {
+                anim.SetInteger("State", 3);
+            }
+            else
+            {
+                anim.SetInteger("State", 2);
+            }
+        }
 
     }
 
@@ -56,6 +76,14 @@ public class CAVPlayerController : MonoBehaviour
         if (other.tag == "Ground"&&!grounded)
         {
             grounded = true;
+            if (other.name == "Ladder")
+            {
+                ladder = true;
+            }
+            else
+            {
+                ladder = false;
+            }
 
         }
     }
@@ -64,6 +92,7 @@ public class CAVPlayerController : MonoBehaviour
         if (other.tag == "Ground"&&grounded)
         {
             grounded = false;
+            ladder = false;
 
         }
     }
