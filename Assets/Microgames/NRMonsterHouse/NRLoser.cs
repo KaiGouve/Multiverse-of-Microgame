@@ -9,7 +9,6 @@ public class NRLoser : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("AAAAAAAAA");
             Loser.Invoke();
         }
     }

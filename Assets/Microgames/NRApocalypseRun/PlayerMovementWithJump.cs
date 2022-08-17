@@ -51,10 +51,7 @@ public class PlayerMovementWithJump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround)
         {
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Hambaga");
+            GetComponentInChildren<PlayerSFX>().PlaySFX(false, 2);
         }
         if (transform.position.x > 70)
         {
