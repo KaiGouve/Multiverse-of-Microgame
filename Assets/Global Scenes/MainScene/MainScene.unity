@@ -3091,7 +3091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &297713045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4425,7 +4425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 192489ea872ebe744849654fda2c642b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae1f48f38d7e98a43868cba27676c739, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8949,7 +8949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 910e2a30b0bf2c94ea07112298772ab1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ca81b7695de96649937bd8c9a582515, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9138,7 +9138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &815886127
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13942,7 +13942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 192489ea872ebe744849654fda2c642b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae1f48f38d7e98a43868cba27676c739, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14501,7 +14501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 910e2a30b0bf2c94ea07112298772ab1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ca81b7695de96649937bd8c9a582515, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15177,7 +15177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: 0}
+  m_AnchoredPosition: {x: -220, y: 0}
   m_SizeDelta: {x: 377.0809, y: 135.5891}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1311881291
@@ -15220,7 +15220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: James Surname
+  m_text: James Tanubrata
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73473af04b3fd2b4a8df1b6bd9327b16, type: 2}
   m_sharedMaterial: {fileID: 8127148957466010516, guid: 73473af04b3fd2b4a8df1b6bd9327b16, type: 2}
@@ -15283,7 +15283,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -238.46832, w: 0}
+  m_margin: {x: 0, y: 0, z: -271.73718, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15709,7 +15709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 910e2a30b0bf2c94ea07112298772ab1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ca81b7695de96649937bd8c9a582515, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17107,7 +17107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 192489ea872ebe744849654fda2c642b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae1f48f38d7e98a43868cba27676c739, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19627,7 +19627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 50f821ce57b637c4492db3f9b1cb3dcc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 989afb57073070746a4d2cf479e972aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
