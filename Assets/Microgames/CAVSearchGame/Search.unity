@@ -987,6 +987,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8801146465233943524, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
+      propertyPath: mouseJiggle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801146465233943524, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: Images.Array.size
       value: 2
       objectReference: {fileID: 0}
