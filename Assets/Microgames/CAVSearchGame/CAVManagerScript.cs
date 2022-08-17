@@ -17,6 +17,7 @@ public class CAVManagerScript : MonoBehaviour
     private void Start()
     {
         GameObject.Find("WorldManager").GetComponent<MouseScript>().toggleCursor(false);
+        Cursor.visible = false;
         int rand = Random.Range(0, objectSprites.Length);
         for (int i = 0; i < SpriteSpawners.Length; i++)
         {
@@ -35,6 +36,7 @@ public class CAVManagerScript : MonoBehaviour
     private void OnDisable()
     {
         GameObject.Find("WorldManager").GetComponent<MouseScript>().toggleCursor(true);
+        Cursor.visible = true;
     }
 
 

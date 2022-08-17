@@ -53,7 +53,7 @@ public class PlayerMovementWithJump : MonoBehaviour
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
             GetComponentInChildren<PlayerSFX>().PlaySFX(false, 2);
         }
-        if (transform.position.x > 70)
+        if (transform.position.x > 38)
         {
             nextScene.Invoke();
         }
