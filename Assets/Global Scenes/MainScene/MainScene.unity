@@ -74530,7 +74530,7 @@ MonoBehaviour:
   wTransfer: []
   worlds:
   - worldName: Post_Apocalyptic
-    worldTransfer: {fileID: 1584382920}
+    worldTransfer: {fileID: 928930301}
     allMinigames:
     - CleanObject
     - Climber
@@ -74539,7 +74539,7 @@ MonoBehaviour:
     - Avoid Obstacles
     poolMinigames: []
   - worldName: Sci_Fi
-    worldTransfer: {fileID: 1584382920}
+    worldTransfer: {fileID: 1642940082}
     allMinigames:
     - OddOneOut
     - SpaceInvader
@@ -74548,7 +74548,7 @@ MonoBehaviour:
     - DDR
     poolMinigames: []
   - worldName: Horror
-    worldTransfer: {fileID: 1584382920}
+    worldTransfer: {fileID: 1549039629}
     allMinigames:
     - KGStabMonsters
     - Search
@@ -74557,7 +74557,7 @@ MonoBehaviour:
     - Monster Tinder
     poolMinigames: []
   - worldName: Internet
-    worldTransfer: {fileID: 1584382920}
+    worldTransfer: {fileID: 768735292}
     allMinigames:
     - ReCaptcha
     - BugSquash
