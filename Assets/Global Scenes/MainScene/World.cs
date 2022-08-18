@@ -7,19 +7,22 @@ using UnityEngine.SceneManagement;
 
 public class World : MonoBehaviour
 {
-    private List<WorldsCollection> worldsInit;
+    [SerializeField, ReadOnly] List<GameObject> wTransfer;
     public List<WorldsCollection> worlds;
     public bool next;
     [SerializeField, ReadOnly] List<string> lWorld;
 
+    [SerializeField, ReadOnly] bool callOnce = false;
+
 
     void Start()
     {
-        worldsInit = worlds;
         DontDestroyOnLoad(gameObject);
 
         List<string> listWorld = new List<string>();
         //List<string> listMicroGame = new List<string>();
+
+        List<GameObject> listTransfer = new List<GameObject>();
 
         foreach (WorldsCollection item in worlds)
         {
@@ -27,9 +30,13 @@ public class World : MonoBehaviour
 
             string[] games = item.allMinigames.ToArray();
             item.poolMinigames = games.ToList();
+
+            listTransfer.Add(item.worldTransfer);
         }
 
         lWorld = listWorld.ToList();
+
+        wTransfer = listTransfer.ToList();
     }
 
     public void NextGame()
@@ -48,7 +55,7 @@ public class World : MonoBehaviour
         
 
         updateMusic(iWorld);
-        
+
 
 
         if ((worlds[iWorld].poolMinigames.Count) > 1)
@@ -60,11 +67,26 @@ public class World : MonoBehaviour
         }
         else
         {
-            //load that scene by name
-            SceneManager.LoadScene(worlds[iWorld].poolMinigames[iPool]);
+            int iTransfer = wTransfer.Count - 1;
 
-            worlds[iWorld].poolMinigames.RemoveAt(iPool);
-            lWorld.RemoveAt(iWorld);
+            if (worlds[iTransfer].worldTransfer != null)
+            {
+                if (callOnce == true)
+                {
+                    NextGameWorld(iWorld, iPool);
+                    callOnce = false;
+                }
+                else
+                {
+                    //Instantiate(worlds[iTransfer].worldTransfer, transform.position, transform.rotation);
+                    worlds[iTransfer].worldTransfer.SetActive(true);
+                    callOnce = true;
+                }
+            }
+            else
+            {
+                NextGameWorld(iWorld, iPool);
+            }
         }
     }
 
@@ -105,11 +127,13 @@ public class World : MonoBehaviour
         NextGame();
         
     }
-    public void ReturnToMenu()
+    void NextGameWorld(int iWorld, int iPool)
     {
-        worlds = worldsInit;
-        SceneManager.LoadScene("EmptyScene");
-        Time.timeScale = 1;
+        //load that scene by name
+        SceneManager.LoadScene(worlds[iWorld].poolMinigames[iPool]);
+
+        worlds[iWorld].poolMinigames.RemoveAt(iPool);
+        lWorld.RemoveAt(iWorld);
     }
 }
 
@@ -117,6 +141,7 @@ public class World : MonoBehaviour
 public class WorldsCollection
 {
     public string worldName; // worlds name
+    public GameObject worldTransfer;
     public List<string> allMinigames; // populate with the scene's names in inspector
     [SerializeField, ReadOnly] public List<string> poolMinigames;
 }

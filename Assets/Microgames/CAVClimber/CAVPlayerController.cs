@@ -13,6 +13,7 @@ public class CAVPlayerController : MonoBehaviour
     [SerializeField] Animator anim;
     bool ladder=false;
     SpriteRenderer sR;
+    [SerializeField] AudioSource aS;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,12 @@ public class CAVPlayerController : MonoBehaviour
         }
         if(grounded&& Input.GetKey(KeyCode.Space)|| grounded && Input.GetKey(KeyCode.W))
         {
-            vel.y = 6;
+            vel.y = 7.2f;
+            if (!ladder)
+            {
+                aS.Play();
+            }
+            
         }
 
         rb.gravityScale = grounded&&vel.y<=0 ? 0 : 1;
@@ -46,6 +52,7 @@ public class CAVPlayerController : MonoBehaviour
         {
             //WIN
             nextScene.Invoke();
+            transform.position -= new Vector3(15,5);
         }
 
         if (vel.x != 0){sR.flipX = vel.x > 0 ? false : true;}

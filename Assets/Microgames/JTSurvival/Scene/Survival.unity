@@ -2201,7 +2201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 5659272348914859820, guid: 8afe5f537bfd18e439a29c916e3d0e4a, type: 3}
-  gameWinCanvas: {fileID: 0}
+  gameWinCanvas: {fileID: 5659272348914859820, guid: af97286cdeb7bda41a4e9a89ffa50335, type: 3}
   loadToScene: MainScene
   gameOver:
     m_PersistentCalls:

@@ -15,7 +15,7 @@ public class ObsticalSpawner : MonoBehaviour
     {
         GameObject newObstical = Instantiate(obstical);
 
-        newObstical.transform.position = transform.position + new Vector3(Random.Range(-horizontalH, horizontalH), Random.Range(-verticalH, verticalH), 0);
+        newObstical.transform.position = transform.position + new Vector3(Random.Range(-horizontalH, horizontalH), Random.Range(-verticalH, verticalH), 1.2f);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class ObsticalSpawner : MonoBehaviour
         {
             GameObject newObstical = Instantiate(obstical);
 
-            newObstical.transform.position = transform.position + new Vector3(Random.Range(-horizontalH, horizontalH), Random.Range(-verticalH, verticalH), 0);
+            newObstical.transform.position = transform.position + new Vector3(Random.Range(-horizontalH, horizontalH), Random.Range(-verticalH, verticalH), 1.2f);
 
             Destroy(newObstical, 15);
             timer = 0;
