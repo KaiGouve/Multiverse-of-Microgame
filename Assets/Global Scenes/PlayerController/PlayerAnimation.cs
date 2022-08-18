@@ -26,11 +26,11 @@ public class PlayerAnimation : MonoBehaviour
         
         if (rb.velocity.x != 0) { sR.flipX = rb.velocity.x > 0 ? false : true; }
 
-        if (grounded && Mathf.Abs(rb.velocity.x) < 0.01)
+        if (grounded && Mathf.Abs(rb.velocity.x) < 0.1)
         {
             anim.SetInteger("State", 0);
         }
-        else if (grounded && Mathf.Abs(rb.velocity.x) > 0.01)
+        else if (grounded && Mathf.Abs(rb.velocity.x) > 0.1)
         {
             anim.SetInteger("State", 1);
         }
