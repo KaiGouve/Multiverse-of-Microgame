@@ -12,5 +12,10 @@ public class NRPressA : MonoBehaviour
         {
             PressA.Invoke();
         }
+        
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PressA.Invoke();
+        }
     }
 }

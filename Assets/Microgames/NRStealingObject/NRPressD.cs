@@ -12,5 +12,10 @@ public class NRPressD : MonoBehaviour
         {
             PressD.Invoke();
         }
+        
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            PressD.Invoke();
+        }
     }
 }
