@@ -88,6 +88,12 @@ public class World : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ResetWorld()
+    {
+        Destroy(this);
+    }
+
     public void StartFromWorld(int n)
     {
         

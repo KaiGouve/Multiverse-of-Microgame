@@ -79,7 +79,8 @@ public class Timer : MonoBehaviour
 
     public void StopTime()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        Time.timeScale = 0.00001f;
     }
 
     public void ContinueTime()

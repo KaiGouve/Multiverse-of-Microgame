@@ -41,13 +41,21 @@ public class GameOver : MonoBehaviour
         //gameOverCanvas.SetActive(true);
         Instantiate(gameOverCanvas, new Vector3(0, 0, 0), Quaternion.identity);
         gameOver.Invoke();
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+
+        Time.timeScale = 1/ 100000;
     }
 
     public void ReturntoScene()
     {
         callOnce = true;
         //Debug.Log("callOnce " + callOnce);
+    }
+
+    public void ReturntoSceneButton()
+    {
+        SceneManager.LoadScene(loadToScene);
+        Time.timeScale = 1;
     }
 
     public void NextGame()

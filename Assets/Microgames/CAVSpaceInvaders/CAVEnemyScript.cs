@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CAVEnemyScript : MonoBehaviour
 {
+    public UnityEvent invokeApply;
 
     // Update is called once per frame
     void Update()
@@ -15,5 +17,10 @@ public class CAVEnemyScript : MonoBehaviour
             GameObject.Find("Gun").GetComponent<CAVGunScript>().fail.Invoke();
             Destroy(gameObject);
         }
+    }
+
+    public void failInvoke()
+    {
+        GameObject.Find("Gun").GetComponent<CAVGunScript>().fail.Invoke();
     }
 }

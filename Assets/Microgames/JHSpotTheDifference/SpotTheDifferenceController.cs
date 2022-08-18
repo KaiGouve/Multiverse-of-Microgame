@@ -68,6 +68,7 @@ public class SpotTheDifferenceController : MonoBehaviour
             nextScene.Invoke();
         } else {
             {Debug.Log("You Lose!");} // Lose State
+            loss.Invoke();
         }
     }
 }

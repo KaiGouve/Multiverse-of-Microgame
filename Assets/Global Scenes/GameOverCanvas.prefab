@@ -25,7 +25,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752844854945927495}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7606718, y: 0.7606718, z: 0.7606718}
   m_ConstrainProportionsScale: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1, y: -3}
-  m_SizeDelta: {x: 119.5798, y: 0}
+  m_AnchoredPosition: {x: -0.9999924, y: -2.999977}
+  m_SizeDelta: {x: 119.579865, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5703026629306793546
 CanvasRenderer:
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -11.333613, z: 0, w: -2.3860254}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 7394982782333451030}
   - component: {fileID: 2869289488084806823}
   - component: {fileID: 8174952729238710506}
+  - component: {fileID: 6107818668921406269}
   m_Layer: 5
   m_Name: Start Again
   m_TagString: Untagged
@@ -257,7 +258,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7394982782333451030}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2618845929370331817}
+        m_TargetAssemblyTypeName: JTOver, Assembly-CSharp
+        m_MethodName: StartAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8174952729238710506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,9 +284,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSize: {fileID: 2219428383498586384}
-  targetResize: {x: 1.1, y: 1.1, z: 1.1}
+  targetResize: {x: 2, y: 2, z: 2}
   speed: 10
-  multiplier: 1
+  multiplier: 10000
   hoverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -281,6 +294,32 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hoverSound: {fileID: 0}
+--- !u!61 &6107818668921406269
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219428383498586384}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 168.5, y: 37.2}
+  m_EdgeRadius: 0
 --- !u!1 &2759840334706132182
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +331,7 @@ GameObject:
   - component: {fileID: 6351207299594000656}
   - component: {fileID: 5388418383105863298}
   - component: {fileID: 1351838251693037931}
+  - component: {fileID: 2618845929370331817}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -357,6 +397,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2618845929370331817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759840334706132182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05a20242a316714c8deafd9c821367f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1 &3701172375329905888
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +539,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -12.79563, z: 0, w: -4.4784546}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -621,7 +674,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -10.5767975, y: -9.463445, z: 0, w: -10.020118}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -825,6 +878,7 @@ GameObject:
   - component: {fileID: 6909247782812863413}
   - component: {fileID: 6577946582943569332}
   - component: {fileID: 4943894938208392070}
+  - component: {fileID: 3686916302393812260}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -934,7 +988,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6909247782812863413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2618845929370331817}
+        m_TargetAssemblyTypeName: JTOver, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4943894938208392070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,9 +1014,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSize: {fileID: 6837505499659190064}
-  targetResize: {x: 1.1, y: 1.1, z: 1.1}
+  targetResize: {x: 2, y: 2, z: 2}
   speed: 10
-  multiplier: 1
+  multiplier: 10000
   hoverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -958,6 +1024,32 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hoverSound: {fileID: 0}
+--- !u!61 &3686916302393812260
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837505499659190064}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 232.7, y: 33.6}
+  m_EdgeRadius: 0
 --- !u!1 &9075967937356576507
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +1063,7 @@ GameObject:
   - component: {fileID: 5928550054319713178}
   - component: {fileID: 7228331605800806048}
   - component: {fileID: 8763281750961198686}
+  - component: {fileID: 4953559511714657099}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1080,7 +1173,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5928550054319713178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2618845929370331817}
+        m_TargetAssemblyTypeName: JTOver, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2618845929370331817}
+        m_TargetAssemblyTypeName: JTOver, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8763281750961198686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,9 +1211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSize: {fileID: 9075967937356576507}
-  targetResize: {x: 1.1, y: 1.1, z: 1.1}
+  targetResize: {x: 2, y: 2, z: 2}
   speed: 10
-  multiplier: 1
+  multiplier: 10000
   hoverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1104,3 +1221,29 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hoverSound: {fileID: 0}
+--- !u!61 &4953559511714657099
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075967937356576507}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 252.7, y: 33.3}
+  m_EdgeRadius: 0
