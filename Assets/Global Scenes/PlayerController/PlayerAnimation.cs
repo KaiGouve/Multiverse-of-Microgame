@@ -10,31 +10,54 @@ public class PlayerAnimation : MonoBehaviour
     SurvivalPlayer ctrlr;
 
     bool grounded;
+    [SerializeField] bool hasRb = true;
+    [SerializeField] bool isBowl;
+
+    Vector3 vel;
 
     private void Start()
     {
         ctrlr = GetComponent<SurvivalPlayer>();
-        rb = GetComponent<Rigidbody2D>();
         sR = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        if (isBowl)
+        {
+            anim.SetTrigger("HasBowl");
+            Debug.Log("ADsIDGIAHISdhIAHSi");
+        }
+        if (hasRb)
+        {
+            rb = GetComponent<Rigidbody2D>();
+
+        }
     }
 
 
     private void Update()
     {
-        grounded = ctrlr.onGround;
-        
-        if (rb.velocity.x != 0) { sR.flipX = rb.velocity.x > 0 ? false : true; }
+        if (ctrlr != null)
+        {
+            grounded = ctrlr.onGround;
+        }
+        else
+        {
+            grounded = true;
+        }
 
-        if (grounded && Mathf.Abs(rb.velocity.x) < 0.1)
+        vel = hasRb ? rb.velocity:new Vector3(Input.GetAxis("Horizontal"),0,0);
+
+
+        if (vel.x != 0) { sR.flipX = vel.x > 0 ? false : true; }
+
+        if (grounded && Mathf.Abs(vel.x) < 0.1)
         {
             anim.SetInteger("State", 0);
         }
-        else if (grounded && Mathf.Abs(rb.velocity.x) > 0.1)
+        else if (grounded && Mathf.Abs(vel.x) > 0.1)
         {
             anim.SetInteger("State", 1);
         }
-        else if (rb.velocity.y > 0)
+        else if (vel.y > 0)
         {
             anim.SetInteger("State", 2);
         }
