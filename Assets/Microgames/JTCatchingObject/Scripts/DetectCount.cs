@@ -15,6 +15,7 @@ public class DetectCount : MonoBehaviour
         if (currentCount == expectCount)
         {
             CountExpect.Invoke();
+            currentCount++;
         }
     }
     public void DetectCountNumber()
