@@ -11,6 +11,8 @@ public class FlyTwitterBird : MonoBehaviour
     private Rigidbody2D rb;
 
     public UnityEvent detectObj;
+    [SerializeField] Animator anim;
+    AudioSource aS;
 
     void Awake()
     {
@@ -20,7 +22,8 @@ public class FlyTwitterBird : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
+        aS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,8 @@ public class FlyTwitterBird : MonoBehaviour
         {
             //Jump
             rb.velocity = Vector2.up * velocity;
+            anim.SetTrigger("Flap");
+            aS.Play();
         }
     }
 

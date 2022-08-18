@@ -15,7 +15,6 @@ public class JTOver : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(Time.timeScale);
 
         //StartCoroutine(DestroyFirst());
     }
