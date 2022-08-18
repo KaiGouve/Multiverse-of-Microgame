@@ -33,6 +33,8 @@ public class SurvivalPlayer : MonoBehaviour
 
     [SerializeField] bool flip = true;
 
+    [SerializeField] AudioSource jumpSound;
+
     // Update is called once per frame
     void Update()
     {
@@ -82,7 +84,11 @@ public class SurvivalPlayer : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
         jumpTimer = 0;
+        if (jumpSound != null) { jumpSound.Play(); }
+
+
         StartCoroutine(JumpSqueeze(0.5f, 1.2f, 0.1f));
+        
     }
     void modifyPhysics()
     {
