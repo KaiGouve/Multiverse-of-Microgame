@@ -8821,7 +8821,7 @@ MonoBehaviour:
   unHoverEvent:
     m_PersistentCalls:
       m_Calls: []
-  hoverSound: {fileID: 0}
+  hoverSound: {fileID: 151170517}
 --- !u!114 &277212454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8866,8 +8866,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 277212452}
-        m_TargetAssemblyTypeName: NRResume, Assembly-CSharp
+      - m_Target: {fileID: 2068299425}
+        m_TargetAssemblyTypeName: NRPause, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -31716,7 +31716,7 @@ MonoBehaviour:
   unHoverEvent:
     m_PersistentCalls:
       m_Calls: []
-  hoverSound: {fileID: 0}
+  hoverSound: {fileID: 151170517}
 --- !u!114 &895715720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41420,7 +41420,7 @@ MonoBehaviour:
   unHoverEvent:
     m_PersistentCalls:
       m_Calls: []
-  hoverSound: {fileID: 0}
+  hoverSound: {fileID: 151170517}
 --- !u!114 &1121802830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45307,7 +45307,7 @@ MonoBehaviour:
   unHoverEvent:
     m_PersistentCalls:
       m_Calls: []
-  hoverSound: {fileID: 0}
+  hoverSound: {fileID: 151170517}
 --- !u!114 &1233123507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63020,7 +63020,7 @@ MonoBehaviour:
   unHoverEvent:
     m_PersistentCalls:
       m_Calls: []
-  hoverSound: {fileID: 0}
+  hoverSound: {fileID: 151170517}
 --- !u!114 &1671488653
 MonoBehaviour:
   m_ObjectHideFlags: 0
