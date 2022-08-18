@@ -43,7 +43,7 @@ public class GameOver : MonoBehaviour
         gameOver.Invoke();
         //Time.timeScale = 0;
 
-        Time.timeScale = 1/ 100000;
+        Time.timeScale = 0.00001f;
     }
 
     public void ReturntoScene()
