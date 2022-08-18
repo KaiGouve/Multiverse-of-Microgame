@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
 
     [SerializeField] Text countText;
 
+    float multiplier = 1;
+
     bool callOnce = true;
 
     public UnityEvent startTime;
@@ -30,7 +32,7 @@ public class Timer : MonoBehaviour
     {
         if (downOrUp == false)
         {
-            currentTime -= 1 * Time.deltaTime;
+            currentTime -= 1 * Time.deltaTime * multiplier;
 
             if (countText != null)
             {
@@ -53,7 +55,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            currentTime += 1 * Time.deltaTime;
+            currentTime += 1 * Time.deltaTime * multiplier;
 
             if (countText != null)
             {
@@ -75,6 +77,25 @@ public class Timer : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SpeedMultiplier()
+    {
+        if (Time.timeScale <= 0.00001f)
+        {
+            StartCoroutine(MaxSpeed());
+        }
+    }
+
+    IEnumerator MaxSpeed()
+    {
+        yield return new WaitForSeconds(0.00001f);
+        multiplier = 100000;
+    }
+
+    public void ReturnMultiplier()
+    {
+        multiplier = 1;
     }
 
     public void StopTime()

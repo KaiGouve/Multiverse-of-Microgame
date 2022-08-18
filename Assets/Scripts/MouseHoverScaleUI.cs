@@ -26,9 +26,9 @@ public class MouseHoverScaleUI : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     void Update()
     {
-        if (Time.timeScale<1)
+        if (Time.timeScale<0.5f)
         {
-            multiplier = 100000;    
+            multiplier = 10000;    
         }
         else
         {

@@ -1254,7 +1254,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5646760477332238061}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: NextGame
+        m_MethodName: GameWinPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2857,6 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 5659272348914859820, guid: 8afe5f537bfd18e439a29c916e3d0e4a, type: 3}
+  gameWinCanvas: {fileID: 0}
   loadToScene: MainScene
   gameOver:
     m_PersistentCalls:
@@ -2885,3 +2886,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameWin:
+    m_PersistentCalls:
+      m_Calls: []

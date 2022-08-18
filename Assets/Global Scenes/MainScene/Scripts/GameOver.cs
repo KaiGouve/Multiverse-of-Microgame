@@ -7,9 +7,11 @@ using UnityEngine.Events;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverCanvas;
+    public GameObject gameWinCanvas;
     public string loadToScene;
 
     public UnityEvent gameOver;
+    public UnityEvent gameWin;
 
     World world;
 
@@ -67,5 +69,15 @@ public class GameOver : MonoBehaviour
             world.NextGame();
             Time.timeScale = 1;
         }
+    }
+
+    public void GameWinPanel()
+    {
+        //gameOverCanvas.SetActive(true);
+        Instantiate(gameWinCanvas, new Vector3(0, 0, 0), Quaternion.identity);
+        gameOver.Invoke();
+        //Time.timeScale = 0;
+
+        Time.timeScale = 0.00001f;
     }
 }

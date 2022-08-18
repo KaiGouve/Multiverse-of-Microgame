@@ -26,8 +26,8 @@ public class FlyTwitterBird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(input.spaceBar))
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(input.spaceBar))
+        //if (Input.GetMouseButtonDown(0))
         {
             //Jump
             rb.velocity = Vector2.up * velocity;

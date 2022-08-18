@@ -1486,7 +1486,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 417305595371286434}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: NextGame
+        m_MethodName: GameWinPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1754,7 +1754,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1671047084
@@ -1824,6 +1824,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1672672064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4863752222378328508, guid: 99495587a511b0847a9559280a522f07, type: 3}
+  m_PrefabInstance: {fileID: 1110614869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1727667898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,11 +1913,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1672672064 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4863752222378328508, guid: 99495587a511b0847a9559280a522f07, type: 3}
-  m_PrefabInstance: {fileID: 1110614869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1768756275 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3391510801292250940, guid: 99495587a511b0847a9559280a522f07, type: 3}
@@ -2062,6 +2062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 5659272348914859820, guid: 8afe5f537bfd18e439a29c916e3d0e4a, type: 3}
+  gameWinCanvas: {fileID: 0}
   loadToScene: MainScene
   gameOver:
     m_PersistentCalls:
@@ -2078,6 +2079,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameWin:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &417305595371286435
 GameObject:
   m_ObjectHideFlags: 0

@@ -385,7 +385,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 741519382}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: NextGame
+        m_MethodName: GameWinPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
