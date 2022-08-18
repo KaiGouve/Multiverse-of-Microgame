@@ -102,6 +102,7 @@ public class World : MonoBehaviour
         {
             lWorld.RemoveAt(iWorld);
         }
+        NextGame();
         
     }
     public void ReturnToMenu()
