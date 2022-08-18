@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2662260335771994715}
   - component: {fileID: 1657670142452081132}
+  - component: {fileID: 7934523733508986014}
   m_Layer: 0
   m_Name: Gameover
   m_TagString: Untagged
@@ -62,9 +63,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1657670142452081132}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: ReturntoScene
+      - m_Target: {fileID: 7934523733508986014}
+        m_TargetAssemblyTypeName: GameoverUI, Assembly-CSharp
+        m_MethodName: ShowGameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
