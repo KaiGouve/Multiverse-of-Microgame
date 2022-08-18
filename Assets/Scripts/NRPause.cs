@@ -40,6 +40,10 @@ public class NRPause : MonoBehaviour
         }
         currentlyPaused = !activity;
     }
-
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        ChangeVisibility(true);
+    }
 
 }
