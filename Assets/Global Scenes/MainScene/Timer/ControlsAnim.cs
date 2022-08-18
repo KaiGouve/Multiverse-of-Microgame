@@ -9,6 +9,7 @@ public class ControlsAnim : MonoBehaviour
     int number;
     [SerializeField] float delay;
     [SerializeField] bool mouseJiggle;
+    public bool notStopped = false;
     Vector3 startPos;
 
     // Start is called before the first frame update
@@ -24,7 +25,10 @@ public class ControlsAnim : MonoBehaviour
         number++;
         number = number==Images.Length? 0:number;
         GetComponent<Image>().sprite = Images[number];
+        if(!notStopped)
+        {
         StartCoroutine("fY");
+        }
     }
 
     private void FixedUpdate()
