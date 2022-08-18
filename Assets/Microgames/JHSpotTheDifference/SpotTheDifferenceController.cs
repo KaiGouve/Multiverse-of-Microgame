@@ -7,8 +7,8 @@ using UnityEngine.Events;
 public class SpotTheDifferenceController : MonoBehaviour
 {
     public GameObject[] spotting;
-    public Color[] cols;
-    Color getCol;
+    public Sprite[] sprites;
+    Sprite getSprite;
     int notIn;
     float[] xSpeed;
     float[] ySpeed;
@@ -28,19 +28,19 @@ public class SpotTheDifferenceController : MonoBehaviour
 
         // Set colour calues per instance and identify odd one out
         var selected = Random.Range(0, spotting.Length);
-        notIn = Random.Range(0, cols.Length);
+        notIn = Random.Range(0, sprites.Length);
         var buffer = 0;
         for(var z = 0; z < spotting.Length; z++){
             if (z != selected) {
-                spotting[z].GetComponent<Image>().color = cols[buffer];
+                spotting[z].GetComponent<Image>().sprite = sprites[buffer];
             } 
-            else {spotting[z].GetComponent<Image>().color = cols[notIn];}
+            else {spotting[z].GetComponent<Image>().sprite = sprites[notIn];}
             if (buffer > 7) {buffer = 0;} else {buffer ++;}
             if (buffer == notIn) {
                 if (buffer + 1 < 8) {buffer ++;} else {buffer = 0;}
             }
         }
-        getCol = spotting[selected].GetComponent<Image>().color;
+        getSprite = spotting[selected].GetComponent<Image>().sprite;
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class SpotTheDifferenceController : MonoBehaviour
     }
 
     public void SpotMe(){
-        if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color == getCol) {
+        if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Image>().sprite == getSprite) {
             {Debug.Log("You Win!");} // Win State
             nextScene.Invoke();
         } else {
