@@ -2339,6 +2339,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1075147250}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 147205960}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &795452550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3817,9 +3841,9 @@ MonoBehaviour:
   Delayed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1527250801}
-        m_TargetAssemblyTypeName: GameoverUI, Assembly-CSharp
-        m_MethodName: ShowGameOver
+      - m_Target: {fileID: 1527250800}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: GameOverPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4359,17 +4383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ea8514d6e839044bf9c031baef505d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1527250801 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7934523733508986014, guid: d05cf6c2779d4f046b770463a8206371, type: 3}
-  m_PrefabInstance: {fileID: 1527250799}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5dde7b8a21d094a8afe7334dbacf3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1634473944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1463641193574379354, guid: c43774344ab76574b9b3e1d342bb2596, type: 3}
@@ -4759,7 +4772,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1527250800}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: NextGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

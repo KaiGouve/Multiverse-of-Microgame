@@ -62,10 +62,14 @@ public class World : MonoBehaviour
         {
             //load that scene by name
             SceneManager.LoadScene(worlds[iWorld].poolMinigames[iPool]);
-
             worlds[iWorld].poolMinigames.RemoveAt(iPool);
         }
-        else
+        else if ((worlds[iWorld].poolMinigames.Count) == 1)
+        {
+            SceneManager.LoadScene(worlds[iWorld].poolMinigames[iPool]);
+            worlds[iWorld].poolMinigames.RemoveAt(iPool);
+        }
+        else // if ((worlds[iWorld].poolMinigames.Count) < 1)
         {
             int iTransfer = wTransfer.Count - 1;
 
@@ -73,7 +77,9 @@ public class World : MonoBehaviour
             {
                 if (callOnce == true)
                 {
-                    NextGameWorld(iWorld, iPool);
+                    lWorld.RemoveAt(iWorld);
+                    SceneManager.LoadScene(worlds[iWorld].poolMinigames[iPool]);
+
                     callOnce = false;
                 }
                 else
@@ -85,7 +91,8 @@ public class World : MonoBehaviour
             }
             else
             {
-                NextGameWorld(iWorld, iPool);
+                lWorld.RemoveAt(iWorld);
+                SceneManager.LoadScene(worlds[iWorld].poolMinigames[iPool]);
             }
         }
     }
