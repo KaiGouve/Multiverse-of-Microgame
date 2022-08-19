@@ -23,7 +23,6 @@ public class PlayerAnimation : MonoBehaviour
         if (isBowl)
         {
             anim.SetTrigger("HasBowl");
-            Debug.Log("ADsIDGIAHISdhIAHSi");
         }
         if (hasRb)
         {

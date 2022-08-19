@@ -10,9 +10,6 @@ public class MouseScript : MonoBehaviour
     private void OnEnable()
     {
         changeCursor(0);
-        
-
-
     }
     public void toggleCursor(bool on)
     {
