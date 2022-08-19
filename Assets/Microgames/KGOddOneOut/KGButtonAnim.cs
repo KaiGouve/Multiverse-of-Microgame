@@ -12,16 +12,16 @@ public class KGButtonAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("fuckYou");
+        StartCoroutine("fY");
     }
 
-    IEnumerator fuckYou()
+    IEnumerator fY()
     {
         yield return new WaitForSeconds(delay);
         number++;
         number = number==Images.Length? 0:number;
         GetComponent<Image>().sprite = Images[number];
-        StartCoroutine("fuckYou");
+        StartCoroutine("fY");
     }
 
     // Update is called once per frame
