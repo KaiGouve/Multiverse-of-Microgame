@@ -14,6 +14,8 @@ public class World : MonoBehaviour
 
     [SerializeField, ReadOnly] bool callOnce = false;
 
+    [SerializeField] UnityEvent Complete;
+
 
     void Start()
     {
@@ -46,6 +48,12 @@ public class World : MonoBehaviour
             //all worlds has been played
             //show win screen or somethin
             Debug.Log("All games completed");
+
+            Complete.Invoke();
+
+
+
+
             return;
         }
 
@@ -105,6 +113,10 @@ public class World : MonoBehaviour
             next = false;
             NextGame();
             Time.timeScale = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Debug.Log(Time.timeScale);
         }
     }
     void updateMusic(int world)

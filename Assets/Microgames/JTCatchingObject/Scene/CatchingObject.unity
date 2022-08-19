@@ -259,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &180305299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,7 +1111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1244593042103078481, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: m_Text
-      value: Catch all the falling objects
+      value: Catch  all the falling objects
       objectReference: {fileID: 0}
     - target: {fileID: 1512079234388423134, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: m_Pivot.x
