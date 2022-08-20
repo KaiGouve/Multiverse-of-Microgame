@@ -591,6 +591,7 @@ MonoBehaviour:
   - {fileID: 263913582, guid: 419faa97b588f3146824aa29037649ed, type: 3}
   delay: 0.2
   mouseJiggle: 0
+  notStopped: 0
 --- !u!114 &1233812461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,7 +1176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4614891770950580763, guid: c43774344ab76574b9b3e1d342bb2596, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextGame
+      value: GameWinPanel
       objectReference: {fileID: 0}
     - target: {fileID: 4614891770950580763, guid: c43774344ab76574b9b3e1d342bb2596, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName

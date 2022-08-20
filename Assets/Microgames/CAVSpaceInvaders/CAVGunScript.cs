@@ -12,7 +12,7 @@ public class CAVGunScript : MonoBehaviour
     float timerG = 0;
     float cooldownS = 1.5f;
     float timerS = 0;
-    float speed = 0.8f;
+    float speed = 100f;
 
     int spawnAmount = 30;
     int amountLeft = 30;
@@ -25,7 +25,7 @@ public class CAVGunScript : MonoBehaviour
     {
         transform.localScale = new Vector3(1.5f- (Mathf.Abs(Input.GetAxis("Horizontal"))*0.5f), 1.5f,1);
 
-        transform.position = new Vector2(Mathf.Clamp(Mathf.Lerp(transform.position.x, transform.position.x + Input.GetAxisRaw("Horizontal") * speed, 0.05f), -8.15f, 8.15f), -4.3f) ;
+        transform.position = new Vector2(Mathf.Clamp(Mathf.Lerp(transform.position.x, transform.position.x + Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, 0.05f), -8.15f, 8.15f), -4.3f) ;
         if(Input.GetKey(KeyCode.Space)&& timerG <= 0)
         {
             Instantiate(bullet, transform.position,Quaternion.identity);
