@@ -12,6 +12,7 @@ public class ControlsAnim : MonoBehaviour
     public bool notStopped = false;
     Vector3 startPos;
 
+
     // Start is called before the first frame update
     void Start()
     {

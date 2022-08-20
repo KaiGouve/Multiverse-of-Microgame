@@ -8,9 +8,12 @@ public class NRMonster : MonoBehaviour
     int monsterMovement = 1;
     float i = 0;
     float speed = 1;
+
+    SpriteRenderer sR;
     // Start is called before the first frame update
     void Start()
     {
+        sR = GetComponent<SpriteRenderer>();
         monsterMovement = 1;
     }
 
@@ -21,7 +24,7 @@ public class NRMonster : MonoBehaviour
         {
             monsterMovement = 1;
         }
-        //for (float i = 0; i < 2; i+=Time.deltaTime);
+        sR.flipX = Positions[monsterMovement].position.x < transform.position.x ? true : false;
         i += Time.deltaTime * speed;
         if (i > 1)
         {
@@ -33,6 +36,7 @@ public class NRMonster : MonoBehaviour
         {
             i = 0;
             monsterMovement += 1;
+            
         }
     }
 }

@@ -9,7 +9,6 @@ public class NRWinner : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("AAAAAAAAA");
             Winner.Invoke();
         }
 

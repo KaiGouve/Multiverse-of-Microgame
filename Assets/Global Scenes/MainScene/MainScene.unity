@@ -11815,6 +11815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339876158}
   - component: {fileID: 339876160}
+  - component: {fileID: 339876161}
   m_Layer: 5
   m_Name: SFX Slider
   m_TagString: Untagged
@@ -11896,18 +11897,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2026942435}
-        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
-        m_MethodName: ChangeSFXVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 151170517}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -11920,6 +11909,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 339876161}
+        m_TargetAssemblyTypeName: MirrorSlider, Assembly-CSharp
+        m_MethodName: changeVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &339876161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339876157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2d39ae343863944acfaa95fb80df05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherSlider: {fileID: 372917653}
+  thisSlider: {fileID: 339876160}
+  mM: {fileID: 2026942435}
+  sfx: 1
 --- !u!1 &340268810
 GameObject:
   m_ObjectHideFlags: 0
@@ -44702,7 +44719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -61603,6 +61620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1668841878}
   - component: {fileID: 1668841879}
+  - component: {fileID: 1668841880}
   m_Layer: 5
   m_Name: Music Slider
   m_TagString: Untagged
@@ -61684,9 +61702,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2026942435}
-        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
-        m_MethodName: ChangeMusicVolume
+      - m_Target: {fileID: 1668841880}
+        m_TargetAssemblyTypeName: MirrorSlider, Assembly-CSharp
+        m_MethodName: changeVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -61696,6 +61714,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1668841880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668841877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2d39ae343863944acfaa95fb80df05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherSlider: {fileID: 950249314}
+  thisSlider: {fileID: 1668841879}
+  mM: {fileID: 2026942435}
+  sfx: 0
 --- !u!1 &1669006304
 GameObject:
   m_ObjectHideFlags: 0
