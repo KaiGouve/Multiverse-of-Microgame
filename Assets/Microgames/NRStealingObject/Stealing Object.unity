@@ -1426,7 +1426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1244593042103078481, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: m_Text
-      value: Lower the Magnet and steal the Tech
+      value: Press a and d to Lower the Magnet and steal the Tech
       objectReference: {fileID: 0}
     - target: {fileID: 1512079234388423134, guid: 610fadd0e90b26d428f884ce66b815b9, type: 3}
       propertyPath: m_Pivot.x
