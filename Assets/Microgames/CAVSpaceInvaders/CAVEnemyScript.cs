@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class CAVEnemyScript : MonoBehaviour
 {
     public UnityEvent invokeApply;
+    public CAVGunScript gS;
 
     // Update is called once per frame
     void Update()
@@ -15,11 +16,8 @@ public class CAVEnemyScript : MonoBehaviour
         {
             //loss
             GameObject.Find("Gun").GetComponent<CAVGunScript>().fail.Invoke();
-            GameObject[] planes = GameObject.FindGameObjectsWithTag("Finish");
-            foreach(GameObject plane in planes)
-            {
-                Destroy(plane);
-            }
+            gS.clear();
+            
         }
     }
 

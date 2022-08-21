@@ -35,7 +35,8 @@ public class CAVGunScript : MonoBehaviour
 
         if (spawnAmount > 0 && timerS <= 0)
         {
-            Instantiate(enemy, new Vector2((int)Random.Range(-6, 6), 6), Quaternion.identity);
+            GameObject _e = Instantiate(enemy, new Vector2((int)Random.Range(-6, 6), 6), Quaternion.identity);
+            _e.GetComponent<CAVEnemyScript>().gS = this;
             timerS = cooldownS;
             spawnAmount--;
         }
@@ -49,5 +50,14 @@ public class CAVGunScript : MonoBehaviour
             //win
             nextScene.Invoke();
         }
+    }
+    public void clear()
+    {
+        GameObject[] planes = GameObject.FindGameObjectsWithTag("Finish");
+        foreach (GameObject plane in planes)
+        {
+            Destroy(plane);
+        }
+        gameObject.SetActive(false);
     }
 }
