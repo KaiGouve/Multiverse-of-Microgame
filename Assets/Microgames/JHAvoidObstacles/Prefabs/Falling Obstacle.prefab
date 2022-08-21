@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 781707442661267888}
   m_Layer: 0
   m_Name: Falling Obstacle
-  m_TagString: SFX
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
