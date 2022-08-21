@@ -15,18 +15,26 @@ public class MonsterTinderController : MonoBehaviour
 
     public Sprite[] genders;
 
+    [SerializeField] Sprite[] matches;
+    [SerializeField] Image match;
+
     [SerializeField] UnityEvent winState;
     [SerializeField] UnityEvent lossState;
     [SerializeField] UnityEvent interest;
+
+    int myInterest;
     // Start is called before the first frame update
     void Start()
     {
+        int identitynum = Random.Range(0, 3);
+        myInterest = Random.Range(0, 3);
+        match.sprite = matches[identitynum];
         matchChance = Random.Range(0, 5);
         identity.sprite = genders[Random.Range(0, 3)];
-        conditionIdentity.sprite = genders[Random.Range(0, 3)];
+        conditionIdentity.sprite = genders[myInterest];
         interested.sprite = genders[Random.Range(0, 3)];
-        conditionInterested.sprite = genders[Random.Range(0, 3)];
-        
+        conditionInterested.sprite = genders[identitynum];
+
     }
 
 
@@ -38,10 +46,14 @@ public class MonsterTinderController : MonoBehaviour
             lossState.Invoke();
         } else {
             if (matchChance < 8) {
+
+                int identitynum = Random.Range(0,3);
+                match.sprite = matches[identitynum];
                 conditionIdentity.sprite = genders[Random.Range(0, 3)];
-                conditionInterested.sprite = genders[Random.Range(0, 3)];
+                conditionInterested.sprite = genders[identitynum];
                 matchChance ++;
             } else {
+                match.sprite = matches[myInterest];
                 conditionIdentity.sprite = identity.sprite;
                 conditionInterested.sprite = interested.sprite;
             }
