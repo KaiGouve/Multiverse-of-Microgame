@@ -1587,6 +1587,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4614891770950580763, guid: c43774344ab76574b9b3e1d342bb2596, type: 3}
+      propertyPath: setTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614891770950580763, guid: c43774344ab76574b9b3e1d342bb2596, type: 3}
       propertyPath: endTime.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
