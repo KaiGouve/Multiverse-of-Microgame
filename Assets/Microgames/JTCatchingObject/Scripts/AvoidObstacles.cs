@@ -29,7 +29,7 @@ public class AvoidObstacles : MonoBehaviour
     {
         for (var i = 0; i < spawnAmount; i ++) {
             if (counter >= i) {
-                falling[i].transform.Translate(0, -0.013f * speed, 0);
+                falling[i].transform.Translate(0, -Time.deltaTime * speed, 0);
             }
             if (falling[counter].transform.position.y < 2 && counter < spawnAmount - 1) {
                 counter ++;

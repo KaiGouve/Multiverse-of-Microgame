@@ -458,7 +458,7 @@ MonoBehaviour:
   - {x: 1, y: 6, z: 0}
   - {x: 0, y: 6, z: 0}
   obstacle: {fileID: 1873674764590427924, guid: a121cf0669a02bc4092ff3abfd77d749, type: 3}
-  speed: 0.6
+  speed: 2
   player: {fileID: 475923184}
   spawnAmount: 20
   counter: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
     clampEnable: 0
     minClamp: {x: 0, y: 0, z: 0}
     maxClamp: {x: 0, y: 0, z: 0}
-  velocity: 3
+  velocity: 6
   flipEnable: 0
 --- !u!114 &475923192
 MonoBehaviour:
@@ -564,6 +564,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: GameWinPanel
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 475923184}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
