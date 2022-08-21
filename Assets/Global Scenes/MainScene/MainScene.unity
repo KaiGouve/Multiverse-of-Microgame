@@ -26742,7 +26742,7 @@ GameObject:
   - component: {fileID: 768735294}
   m_Layer: 5
   m_Name: Between Worlds Animation (Internet)
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32982,7 +32982,7 @@ GameObject:
   - component: {fileID: 928930303}
   m_Layer: 5
   m_Name: Between Worlds Animation (Apocalypse)
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57219,7 +57219,7 @@ GameObject:
   - component: {fileID: 1549039631}
   m_Layer: 5
   m_Name: Between Worlds Animation (Horror)
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59054,7 +59054,7 @@ GameObject:
   - component: {fileID: 1584382922}
   m_Layer: 5
   m_Name: Between Worlds Animation (Earth)
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61551,7 +61551,7 @@ GameObject:
   - component: {fileID: 1642940084}
   m_Layer: 5
   m_Name: Between Worlds Animation (Future)
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
