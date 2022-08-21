@@ -94,6 +94,7 @@ public class World : MonoBehaviour
                 {
                     //Instantiate(worlds[iTransfer].worldTransfer, transform.position, transform.rotation);
                     worlds[iTransfer].worldTransfer.SetActive(true);
+                    Debug.LogError($"{worlds[iTransfer].worldTransfer} is the thing, from world of itransfer: {iTransfer}");
                     callOnce = true;
                 }
             }

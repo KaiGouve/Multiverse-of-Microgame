@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class MonsterTinderController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class MonsterTinderController : MonoBehaviour
     int matchChance;
 
     public Sprite[] genders;
+
+    [SerializeField] UnityEvent winState;
+    [SerializeField] UnityEvent lossState;
+    [SerializeField] UnityEvent interest;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,16 +29,13 @@ public class MonsterTinderController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     public void SwipeLeft() {
         if (conditionIdentity.sprite == identity.sprite && conditionInterested.sprite == interested.sprite) {
             Debug.Log("You lost a match!");
             // Lose State;
+            lossState.Invoke();
         } else {
             if (matchChance < 8) {
                 conditionIdentity.sprite = genders[Random.Range(0, 3)];
@@ -50,9 +52,11 @@ public class MonsterTinderController : MonoBehaviour
         if (conditionIdentity.sprite == identity.sprite && conditionInterested.sprite == interested.sprite) {
             Debug.Log("You found a match!");
             // Win State;
+            winState.Invoke();
         } else {
             Debug.Log("They're not interested!");
             // Lose State;
+            interest.Invoke();
         }
     }
 }
