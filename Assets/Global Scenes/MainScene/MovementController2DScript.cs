@@ -34,7 +34,7 @@ public class MovementController2DScript : MonoBehaviour
             case MovementType.HORIZONTAL:
                 if (flipEnable)
                 {
-                    transform.Translate(Mathf.Abs(direction.x) * velocity * 0.01f, 0, 0);
+                    transform.Translate(Mathf.Abs(direction.x) * velocity * Time.deltaTime, 0, 0);
                     if ((direction.x > 0 && !facingRight) || (direction.x < 0 && facingRight)) { FlipH(); }
                 }
                 else
