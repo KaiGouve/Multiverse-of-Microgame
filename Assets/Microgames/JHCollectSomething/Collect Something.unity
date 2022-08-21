@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 242293500}
   - component: {fileID: 242293501}
   - component: {fileID: 242293502}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 303015013}
   - component: {fileID: 303015014}
   - component: {fileID: 303015015}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -2508,7 +2508,7 @@ GameObject:
   - component: {fileID: 1005886356}
   - component: {fileID: 1005886357}
   - component: {fileID: 1005886358}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -2883,7 +2883,7 @@ GameObject:
   - component: {fileID: 1144989701}
   - component: {fileID: 1144989702}
   - component: {fileID: 1144989703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (3)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -3126,7 +3126,7 @@ GameObject:
   - component: {fileID: 1182208246}
   - component: {fileID: 1182208247}
   - component: {fileID: 1182208248}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (3)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -3585,7 +3585,7 @@ GameObject:
   - component: {fileID: 1479805334}
   - component: {fileID: 1479805335}
   - component: {fileID: 1479805336}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -4376,7 +4376,7 @@ GameObject:
   - component: {fileID: 1766258512}
   - component: {fileID: 1766258513}
   - component: {fileID: 1766258514}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -5103,7 +5103,7 @@ GameObject:
   - component: {fileID: 1995555331}
   - component: {fileID: 1995555333}
   - component: {fileID: 1995555332}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -5572,7 +5572,7 @@ GameObject:
   - component: {fileID: 2077823621}
   - component: {fileID: 2077823622}
   - component: {fileID: 2077823623}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -5683,7 +5683,7 @@ GameObject:
   - component: {fileID: 2090824305}
   - component: {fileID: 2090824306}
   - component: {fileID: 2090824307}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Tiles_7 (4)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
