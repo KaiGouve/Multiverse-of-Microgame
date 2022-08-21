@@ -41,11 +41,11 @@ public class MovementController2DScript : MonoBehaviour
                 {
                     if (this.transform.rotation.y == 0)
                     {
-                        transform.Translate(direction.x * velocity * 0.01f, 0, 0);
+                        transform.Translate(direction.x * velocity * Time.deltaTime, 0, 0);
                     }
                     else
                     {
-                        transform.Translate(-direction.x * velocity * 0.01f, 0, 0);
+                        transform.Translate(-direction.x * velocity * Time.deltaTime, 0, 0);
                     }
                 }
                 break;
