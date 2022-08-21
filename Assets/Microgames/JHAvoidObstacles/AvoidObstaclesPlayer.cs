@@ -8,7 +8,8 @@ public class AvoidObstaclesPlayer : MonoBehaviour
     Animator anim;
     SpriteRenderer sR;
     [SerializeField] UnityEvent Fail;
-    
+    [SerializeField] float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class AvoidObstaclesPlayer : MonoBehaviour
         pos.x =  Mathf.Clamp(transform.position.x, -7.75f, 7.75f);
         transform.position = pos;
 
-        transform.Translate(Input.GetAxis("Horizontal") * 0.01f, 0, 0);
+        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime*speed, 0, 0);
 
         //Animation
 

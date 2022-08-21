@@ -1343,7 +1343,7 @@ MonoBehaviour:
   - {x: -1, y: 6, z: 0}
   - {x: 1, y: 6, z: 0}
   - {x: 0, y: 6, z: 0}
-  obstacle: {fileID: 1873674764590427924, guid: a121cf0669a02bc4092ff3abfd77d749, type: 3}
+  obstacle: {fileID: 1873674764590427924, guid: d30e7784d540265458312311b9875507, type: 3}
   player: {fileID: 475923184}
 --- !u!4 &1119891164
 Transform:

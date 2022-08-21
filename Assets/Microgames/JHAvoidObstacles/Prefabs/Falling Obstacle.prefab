@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 781707442661267888}
   m_Layer: 0
   m_Name: Falling Obstacle
-  m_TagString: Obstacle
+  m_TagString: SFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,3 +267,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a089dab82ca012f458f71b222d0e757a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  height: 5
