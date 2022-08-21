@@ -731,6 +731,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  speed: 6
 --- !u!50 &475923189
 Rigidbody2D:
   serializedVersion: 4
