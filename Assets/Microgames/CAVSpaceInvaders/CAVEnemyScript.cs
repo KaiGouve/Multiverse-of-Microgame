@@ -15,7 +15,11 @@ public class CAVEnemyScript : MonoBehaviour
         {
             //loss
             GameObject.Find("Gun").GetComponent<CAVGunScript>().fail.Invoke();
-            Destroy(gameObject);
+            GameObject[] planes = GameObject.FindGameObjectsWithTag("Finish");
+            foreach(GameObject plane in planes)
+            {
+                Destroy(plane);
+            }
         }
     }
 
